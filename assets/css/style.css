@@ -57,6 +57,10 @@
   --coral-soft: #fbe5df;
   --ill-ink: #2d3142;  /* Figure 1 ink */
   --ill-panel: #f2f4f7;
+  --ill-red: #d23b2f;
+  --ill-green: #2a9d78;
+  --ill-amber: #b97f0f;
+  --ill-bar: #dfe3ea;
   --night: #070b14;
   --night-2: #0d1322;
   --night-ink: #edf1f8;
@@ -89,6 +93,10 @@
     --coral-soft: #3a221d;
     --ill-ink: #c3cad8;
     --ill-panel: #131927;
+    --ill-red: #f0806e;
+    --ill-green: #4cc79c;
+    --ill-amber: #e8b14a;
+    --ill-bar: #2f3850;
     --shadow: none;
   }
 }
@@ -596,7 +604,12 @@ sub, sup { font-size: 0.68em; line-height: 0; }
   background: var(--ill-panel);
   color: var(--ill-ink);
 }
-.scale-ill .ln { stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.scale-ill .ln, .topic-ill .ln { stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.ill-red { stroke: var(--ill-red); stroke-linecap: round; }
+.ill-green { stroke: var(--ill-green); stroke-linecap: round; stroke-linejoin: round; }
+.ill-amber { stroke: var(--ill-amber); }
+.ill-amber-f { fill: var(--ill-amber); }
+.ill-bar { fill: var(--ill-bar); }
 .ill-note { margin-top: 14px; font-size: 0.88rem; color: var(--muted); }
 .scales h4 { margin: 14px 0 12px; font: 700 1.3rem/1.2 var(--display); letter-spacing: -0.01em; }
 .kv { font-size: 0.9rem; color: var(--ink-2); margin-bottom: 8px; line-height: 1.45; }
@@ -642,6 +655,10 @@ sub, sup { font-size: 0.68em; line-height: 0; }
   color: var(--green-dot);
   letter-spacing: -0.02em;
 }
+/* number and sketch share the first row; title and text span the card */
+.topics li { display: grid; grid-template-columns: auto 1fr; align-items: center; align-content: start; column-gap: 16px; }
+.topics li > h3, .topics li > p { grid-column: 1 / -1; }
+.topic-ill { justify-self: end; width: 200px; max-width: 100%; height: auto; margin-bottom: 10px; color: var(--ill-ink); }
 .topics h3 { margin-bottom: 8px; }
 .topics p { color: var(--ink-2); font-size: 0.95rem; }
 .scope {
