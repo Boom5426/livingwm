@@ -14,7 +14,7 @@ A static site: one HTML page, one stylesheet and one small script, with no build
 | `assets/js/cells.js` | Decorative hero animation (drifting, dividing cells). Pauses off-screen and shows a still frame under reduced motion |
 | `assets/img/figure1.svg` | Figure 1, converted from the proposal's vector PDF |
 | `assets/img/og.png` | Link preview image (1200 x 630), rendered from `tools/og.html` |
-| `assets/img/people/` | Organizer headshots (400 px WebP), from each organizer's homepage with their consent |
+| `assets/img/people/` | Organizer headshots (WebP, at most 400 px). Li, Cui and Yang: from their homepages. The other seven: from the Scientific World Models workshop site, which the same organizers maintain. Source URLs and crops are in `tools/build_assets.py` |
 | `assets/fonts/` | Bricolage Grotesque (headings), Inter (text), Fraunces italic (math and quotes); woff2 from `@fontsource` 5.3.0, SIL Open Font License 1.1 |
 | `tools/build_assets.py` | Regenerates the figure, the headshots and the preview image |
 

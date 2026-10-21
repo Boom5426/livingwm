@@ -812,22 +812,23 @@ details > p, details > ul { margin: 0 0 18px; }
   display: grid;
   gap: 16px;
 }
-@media (min-width: 860px) { .people { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 540px) { .people { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .people { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .people li {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 26px 22px 20px;
+  padding: 24px 18px 18px;
   text-align: center;
 }
 .people img {
-  width: 144px;
-  height: 144px;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--line);
 }
-.people h3 { margin: 16px 0 4px; font: 700 1.35rem/1.2 var(--display); letter-spacing: -0.01em; }
+.people h3 { margin: 14px 0 4px; font: 700 1.2rem/1.2 var(--display); letter-spacing: -0.01em; }
 .people h3 a { color: var(--ink); text-decoration: none; }
 .people h3 a:hover { color: var(--green); }
 .people p { margin: 0 0 2px; font-size: 0.92rem; }

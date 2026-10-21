@@ -27,13 +27,23 @@ IMG = SITE / "assets" / "img"
 
 # Source URL and square crop box (left, top, right, bottom) in source pixels.
 # Boxes are centred on the face so the head fills about three quarters of the
-# frame in every photo; bo-li is limited by its 500 px source width.
+# frame where the source resolution allows. The first three photos come from
+# the organizers' homepages; the rest from the Scientific World Models
+# workshop site, which the same organizers maintain.
+SWM_PEOPLE = "https://taoyongcui.github.io/scientific-world-models/assets/img/people"
 PHOTOS: dict[str, tuple[str, tuple[int, int, int, int] | None]] = {
     "bo-li": ("https://boom5426.github.io/images/CV_me.jpg", (0, 25, 500, 525)),
     "taoyong-cui": ("https://taoyongcui.github.io/assets/homepage/img/taoyong-cui.jpg", (180, 20, 620, 460)),
     "ling-yang": ("https://yangling0818.github.io/images/ling-yang.jpg", (100, 5, 585, 490)),
+    "yingcheng-wu": (f"{SWM_PEOPLE}/yingcheng-wu.webp", (124, 52, 384, 312)),
+    "zhenfei-yin": (f"{SWM_PEOPLE}/zhenfei-yin.webp", (54, 0, 614, 560)),
+    "lu-mi": (f"{SWM_PEOPLE}/lu-mi.webp", (101, 40, 541, 480)),
+    "dandan-zhang": (f"{SWM_PEOPLE}/dandan-zhang.webp", (0, 0, 236, 236)),
+    "xinyue-xu": (f"{SWM_PEOPLE}/xinyue-xu.webp", (74, 18, 224, 168)),
+    "philip-torr": (f"{SWM_PEOPLE}/philip-torr.webp", None),
+    "pheng-ann-heng": (f"{SWM_PEOPLE}/pheng-ann-heng.webp", (6, 4, 256, 254)),
 }
-PHOTO_SIZE = 400  # px; displayed at 128 CSS px, so this covers 3x screens
+PHOTO_SIZE = 400  # px, upper bound; smaller sources are kept at native size
 PHOTO_QUALITY = 82
 OG_SIZE = (1200, 630)  # Open Graph recommended size
 
@@ -56,7 +66,8 @@ def build_photos() -> None:
             img = img.crop(box)
         if img.width != img.height:
             raise ValueError(f"{name}: crop is {img.size}, expected a square")
-        img = img.resize((PHOTO_SIZE, PHOTO_SIZE), Image.Resampling.LANCZOS)
+        side = min(PHOTO_SIZE, img.width)  # never upscale a small source
+        img = img.resize((side, side), Image.Resampling.LANCZOS)
         out = out_dir / f"{name}.webp"
         img.save(out, "WEBP", quality=PHOTO_QUALITY, method=6)
         print(f"wrote {out.relative_to(SITE)} ({out.stat().st_size} B)")
