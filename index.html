@@ -96,8 +96,8 @@
     <div class="about-grid">
       <h2 id="about-title">Life is never static. Its images mostly are.</h2>
       <div class="prose">
-        <p class="lead">Living systems are never static: molecules switch conformations, cells respond to perturbations, tissues remodel, and diseases progress. World models, which learn the state of an environment, predict how it evolves under actions, and generate its future, offer a natural framework for such systems.</p>
-        <p>The Living World Models workshop asks how to learn world states of living systems from biomedical visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states. Biology makes each step hard. Images reveal only part of the state, observations are often destructive snapshots rather than trajectories, most interventions are never tested, and generated outputs must hold up as scientific evidence. Bringing together researchers in world models, generative modeling, 4D vision, microscopy, and medical imaging, we aim to define the methods, benchmarks, and evaluation standards for world models of living systems.</p>
+        <p class="lead">Living systems are never static: molecules switch conformations, cells respond to perturbations, tissues remodel, and diseases progress. The Living World Models workshop asks how to learn world states from biomedical visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states.</p>
+        <p>Each step is hard in biology: images reveal only part of the state, observations are often destructive snapshots rather than trajectories, and generated outputs must hold up as scientific evidence. We bring together vision and life-science researchers to define methods, benchmarks, and evaluation standards for living world models.</p>
       </div>
     </div>
 
@@ -128,7 +128,7 @@
   <div class="wrap">
     <p class="eyebrow">Key questions</p>
     <h2 id="questions-title">Three components, two worlds</h2>
-    <p class="prose intro">The workshop is organized around one core question. <em>How can we learn world states of living systems from biomedical visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states?</em> Vision world models answer it for video, where the state is mostly visible and realism is the test. Living systems raise one key question at each component, and talks, papers, and the panel are organized around these three.</p>
+    <p class="prose intro">The workshop is organized around one core question. <em>How can we learn world states of living systems from biomedical visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states?</em> Vision world models answer it for video, where the state is mostly visible and realism is the test. Living systems raise one key question at each component. Talks, papers, and the panel address these three.</p>
     <figure class="figure-card">
       <div class="figure-scroll" tabindex="0" role="region" aria-label="Figure 1 (scrolls sideways on small screens)">
         <img src="assets/img/figure1.svg" width="1121" height="424" loading="lazy"
@@ -144,7 +144,7 @@
         <li>
           <span class="q">Q2 · Dynamics</span>
           <h3>Predicting dynamics under interventions</h3>
-          <p>How can a model learn how states evolve over time and respond to drugs, genetic edits, and treatments from destructive, unpaired snapshots rather than trajectories? When is the dynamics identifiable, and can predictions generalize to unseen interventions, their combinations, new cell types, and new patients?</p>
+          <p>How can a model learn how states evolve over time and respond to drugs, genetic edits, and treatments from destructive, unpaired snapshots rather than trajectories? When are the dynamics identifiable, and can predictions generalize to unseen interventions, their combinations, new cell types, and new patients?</p>
         </li>
         <li>
           <span class="q">Q3 · Generation</span>
@@ -164,7 +164,7 @@
         <p class="kv"><span>Observation</span>cryo-EM particles, predicted structures</p>
         <p class="kv"><span>State</span>conformation</p>
         <p class="kv"><span>Intervention</span>ligand, mutation</p>
-        <p class="ask"><span>Future state to generate</span>Conformational ensemble consistent with heterogeneous particle images</p>
+        <p class="ask"><span>Future state to generate</span>Conformational ensemble after binding or mutation, consistent with particle images</p>
       </li>
       <li>
         <svg class="scale-ill" viewBox="0 0 240 84" aria-hidden="true" focusable="false"><g transform="translate(10 10)"><rect width="64" height="64" rx="6" fill="#1d2233"/>
@@ -228,7 +228,7 @@
       <li>
         <svg class="topic-ill" viewBox="0 0 160 64" aria-hidden="true" focusable="false"><g transform="translate(4 6) scale(.5) translate(-22 -314)"><rect class="ln" x="22" y="314" width="88" height="88" rx="6" fill="#1d2233" stroke-width="4"/><circle cx="48" cy="340" r="11" fill="#4fa3e8"/><circle cx="84" cy="348" r="15" fill="#e85bb8"/><circle cx="84" cy="348" r="6" fill="#ffd0ee"/><circle cx="56" cy="380" r="7" fill="#3ecf8e"/><circle class="ln" cx="100" cy="390" r="22" fill="#fff" fill-opacity=".35" stroke-width="6"/><path class="ln" d="M116 406 L134 424" stroke-width="9" fill="none"/></g><path class="ill-green" d="M77 12 l3.5 3.5 l7 -7.5" fill="none" stroke-width="2.6"/><rect class="ill-bar" x="94" y="9.5" width="56" height="5" rx="2.5"/><path class="ill-green" d="M77 25 l3.5 3.5 l7 -7.5" fill="none" stroke-width="2.6"/><rect class="ill-bar" x="94" y="22.5" width="46" height="5" rx="2.5"/><path class="ill-amber" d="M77.5 35 q0 -4.5 3.5 -4.5 q3.5 0 3.5 3.5 q0 3 -3.5 4 v2.5" fill="none" stroke-width="2.4" stroke-linecap="round"/><circle class="ill-amber-f" cx="81" cy="44.6" r="1.5"/><rect class="ill-bar" x="94" y="35.5" width="52" height="5" rx="2.5"/><path class="ill-red" d="M77 48 l8 8 M85 48 l-8 8" fill="none" stroke-width="2.6"/><rect class="ill-bar" x="94" y="48.5" width="40" height="5" rx="2.5"/></svg>
         <h3>Evaluation and trustworthiness</h3>
-        <p>Scientific metrics and benchmarks for generative simulators, out-of-distribution generalization, uncertainty estimation, hallucination detection, and interpretability.</p>
+        <p>Scientific metrics and benchmarks for generative simulators, out-of-distribution generalization, uncertainty estimation, hallucination detection, provenance of synthetic images, and interpretability.</p>
       </li>
     </ol>
     <p class="scope">General-purpose methods for world models, video generation, and 4D vision are in scope whenever the submission argues for their relevance to a question in the life sciences.</p>
@@ -461,7 +461,7 @@
       <p><a href="mailto:Boom985426@gmail.com">Boom985426@gmail.com</a></p>
     </div>
     <div class="footer-meta">
-      <p>Last updated 22 October 2026 ·<a href="https://github.com/Boom5426/livingwm">Source</a></p>
+      <p>Last updated 22 October 2026 · <a href="https://github.com/Boom5426/livingwm">Source</a></p>
       <p>Figure 1 by the organizers. Fonts: Bricolage Grotesque, Inter and Fraunces (SIL Open Font License 1.1).</p>
     </div>
   </div>
