@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Living World Models (LivingWM) · CVPR 2027 Workshop Proposal</title>
-<meta name="description" content="Living World Models: Predictive Vision for Biology and Medicine. A half-day workshop proposed for CVPR 2027 in Seattle on how computer vision can learn world models of living systems, from molecules and cells to tissues and patients.">
+<meta name="description" content="Living World Models: Predictive Vision for Biology and Medicine. A half-day workshop proposed for CVPR 2027 in Seattle on world models of living systems: learning world states from biomedical images, predicting their dynamics under interventions, and generating trustworthy future states.">
 <link rel="canonical" href="https://boom5426.github.io/livingwm/">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#070b14">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LivingWM">
 <meta property="og:title" content="Living World Models: Predictive Vision for Biology and Medicine">
-<meta property="og:description" content="A half-day workshop proposed for CVPR 2027 on how computer vision can learn world models of living systems.">
+<meta property="og:description" content="A half-day workshop proposed for CVPR 2027 on learning world states of living systems from images, predicting their dynamics under interventions, and generating trustworthy future states.">
 <meta property="og:url" content="https://boom5426.github.io/livingwm/">
 <meta property="og:image" content="https://boom5426.github.io/livingwm/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Living World Models workshop title over a field of fluorescent cells, above a diagram contrasting vision world models with living world models.">
+<meta property="og:image:alt" content="Living World Models workshop title over a field of fluorescent cells.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/bricolage-grotesque-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -35,8 +35,6 @@
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-molecule" viewBox="0 0 48 48"><circle cx="13" cy="31" r="6"/><circle cx="33" cy="14" r="6"/><circle cx="36" cy="35" r="5"/><path d="M18 27.5l10-8.5M19 32.5l12 2"/></symbol>
   <symbol id="i-cell" viewBox="0 0 48 48"><path d="M7 24c0-10 8-16.5 17.5-15.5S40.5 17 39.5 25.5 30 40.5 21.5 39.5 7 33.5 7 24z"/><circle cx="23.5" cy="24" r="6.5"/></symbol>
-  <symbol id="i-tissue" viewBox="0 0 48 48"><circle cx="15" cy="17" r="8"/><circle cx="32" cy="17" r="8"/><circle cx="23.5" cy="32" r="8"/><circle cx="15" cy="17" r="2" class="fill"/><circle cx="32" cy="17" r="2" class="fill"/><circle cx="23.5" cy="32" r="2" class="fill"/></symbol>
-  <symbol id="i-patient" viewBox="0 0 48 48"><circle cx="24" cy="15" r="7"/><path d="M9 40c1-8.5 7-13.5 15-13.5S38 31.5 39 40"/></symbol>
   <symbol id="i-video" viewBox="0 0 48 48"><rect x="6" y="11" width="36" height="26" rx="4"/><path d="M20.5 18.5v11l9-5.5z" class="fill"/></symbol>
   <symbol id="i-scan" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34" rx="5"/><ellipse cx="24" cy="24" rx="10" ry="12"/><path d="M24 12v24M17 19q4 2.5 0 5M31 19q-4 2.5 0 5"/></symbol>
   <symbol id="i-chat" viewBox="0 0 48 48"><path d="M8 12h22v15H17l-6 5v-5H8z"/><path d="M34 19h6v14h-3v5l-6-5H22v-3"/></symbol>
@@ -69,7 +67,7 @@
     <p class="status"><span class="dot" aria-hidden="true"></span>Workshop proposal · CVPR 2027</p>
     <h1 id="title"><span class="glow">Living</span> World Models</h1>
     <p class="subtitle">Predictive Vision for Biology and Medicine</p>
-    <p class="pitch">How can computer vision learn world models of living systems, from molecules and cells to tissues and patients?</p>
+    <p class="pitch">How can we learn world states of living systems from biomedical visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states?</p>
     <ul class="hero-meta">
       <li><svg class="ic"><use href="#i-cal"/></svg>20 or 21 June 2027</li>
       <li><svg class="ic"><use href="#i-pin"/></svg>Seattle, USA</li>
@@ -77,7 +75,7 @@
     </ul>
     <p class="actions">
       <a class="btn btn-primary" href="#cfp">Call for papers <svg class="ic"><use href="#i-arrow"/></svg></a>
-      <a class="btn btn-ghost" href="#questions">The four questions</a>
+      <a class="btn btn-ghost" href="#questions">The three questions</a>
     </p>
     <p class="hero-note">Proposed to CVPR 2027. CVPR announces its decision on 22 December 2026. If the workshop is accepted, the call for papers opens in January 2027.</p>
   </div>
@@ -98,21 +96,21 @@
     <div class="about-grid">
       <h2 id="about-title">Life is never static. Its images mostly are.</h2>
       <div class="prose">
-        <p class="lead">Living systems are never static: molecules switch conformations, cells respond to perturbations, tissues remodel, and diseases progress. Yet most visual data in biology and medicine are snapshots: fixed, sparse, and often destructive.</p>
-        <p>The Living World Models workshop asks how computer vision can learn world models of such systems: inferring biological states from images, forecasting how they evolve, simulating responses to perturbations and treatments, and generating faithful counterfactuals. Bringing together researchers in world models, generative modeling, 4D vision, microscopy, and medical imaging, we aim to define the methods, benchmarks, and evaluation standards for predictive vision of life.</p>
+        <p class="lead">Living systems are never static: molecules switch conformations, cells respond to perturbations, tissues remodel, and diseases progress. World models, which learn the state of an environment, predict how it evolves under actions, and generate its future, offer a natural framework for such systems.</p>
+        <p>The Living World Models workshop asks how to learn world states of living systems from biomedical visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states. Biology makes each step hard. Images reveal only part of the state, observations are often destructive snapshots rather than trajectories, most interventions are never tested, and generated outputs must hold up as scientific evidence. Bringing together researchers in world models, generative modeling, 4D vision, microscopy, and medical imaging, we aim to define the methods, benchmarks, and evaluation standards for world models of living systems.</p>
       </div>
     </div>
 
     <h3 class="sub">What is a living world model?</h3>
-    <p class="prose">Let <i>x</i> be an image of a biological system (a micrograph, a slide, a scan, a particle image), <i>s<sub>t</sub></i> its latent biological or clinical state at time <i>t</i>, and <i>a</i> a condition such as a perturbation, a drug, a treatment, or elapsed time.</p>
-    <ol class="flow" aria-label="Encoder, transition and decoder of a living world model">
+    <p class="prose">Let <i>x</i> be an image of a biological system (a micrograph, a slide, a scan, a particle image), <i>s<sub>t</sub></i> its latent biological or clinical state at time <i>t</i>, and <i>a</i> an intervention such as a perturbation, a drug, a treatment, or elapsed time. A living world model has three components.</p>
+    <ol class="flow" aria-label="The three components of a living world model: encoder, transition and decoder">
       <li class="node"><span class="sym"><i>x</i></span><small>image</small></li>
-      <li class="edge"><span class="lbl"><b>Encoder</b><span class="math">q<sub>φ</sub>(s | x)</span></span><span class="arrow" aria-hidden="true"></span><small>infers the state</small></li>
+      <li class="edge"><span class="lbl"><b>Encoder</b><span class="math">q<sub>φ</sub>(s | x)</span></span><span class="arrow" aria-hidden="true"></span><small>learns the world state</small></li>
       <li class="node"><span class="sym"><i>s<sub>t</sub></i></span><small>state</small></li>
-      <li class="edge edge-key"><span class="lbl"><b>Transition</b><span class="math">p<sub>θ</sub>(s<sub>t+Δ</sub> | s<sub>t</sub>, a)</span></span><span class="arrow" aria-hidden="true"></span><small>under condition <i>a</i></small></li>
+      <li class="edge edge-key"><span class="lbl"><b>Transition</b><span class="math">p<sub>θ</sub>(s<sub>t+Δ</sub> | s<sub>t</sub>, a)</span></span><span class="arrow" aria-hidden="true"></span><small>predicts dynamics under <i>a</i></small></li>
       <li class="node"><span class="sym"><i>s<sub>t+Δ</sub></i></span><small>future state</small></li>
-      <li class="edge"><span class="lbl"><b>Decoder</b><span class="math">g<sub>ψ</sub>(x | s)</span></span><span class="arrow" aria-hidden="true"></span><small>renders an image</small></li>
-      <li class="node"><span class="sym"><i>x̂</i></span><small>predicted</small></li>
+      <li class="edge"><span class="lbl"><b>Decoder</b><span class="math">g<sub>ψ</sub>(x | s)</span></span><span class="arrow" aria-hidden="true"></span><small>generates the future</small></li>
+      <li class="node"><span class="sym"><i>x<sub>t+Δ</sub></i></span><small>future image</small></li>
     </ol>
     <p class="prose">Because snapshots are usually unpaired, the transition is often identifiable only at the population level, as a map that carries the state distribution <i>ρ<sub>t</sub></i> to <i>ρ<sup>a</sup><sub>t+Δ</sub></i>. Optimal transport, flow matching, and Schrödinger bridges are natural tools for this setting.</p>
 
@@ -129,97 +127,103 @@
 <section class="section section-alt" id="questions" aria-labelledby="questions-title">
   <div class="wrap">
     <p class="eyebrow">Key questions</p>
-    <h2 id="questions-title">Same pipeline, two worlds</h2>
-    <p class="prose intro">Biology and medicine ask what vision world models ask: how does the state of a system change under an intervention? But they ask it under conditions that break each assumption of current world models. Talks, papers, and the panel are organized around the four questions this creates.</p>
+    <h2 id="questions-title">Three components, two worlds</h2>
+    <p class="prose intro">The workshop is organized around one core question. <em>How can we learn world states of living systems from biomedical visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states?</em> Vision world models answer it for video, where the state is mostly visible and realism is the test. Living systems raise one key question at each component, and talks, papers, and the panel are organized around these three.</p>
     <figure class="figure-card">
       <div class="figure-scroll" tabindex="0" role="region" aria-label="Figure 1 (scrolls sideways on small screens)">
-        <img src="assets/img/figure1.svg" width="1121" height="409" loading="lazy"
-          alt="Two-row diagram with four columns: Observe, State and action, Predict, Evaluate. Vision world models (top row) watch continuous video of one scene, act on a mostly visible state, predict the next frame, and are judged by realism. Living world models (bottom row) break each assumption: observations are destructive, unpaired snapshots across scales (Q1); images reveal only part of the biological state, and most combinations of conditions are never observed (Q2); models must predict responses to unseen interventions and generate counterfactuals (Q3); and generated outputs must hold up as scientific evidence (Q4).">
+        <img src="assets/img/figure1.svg" width="1121" height="424" loading="lazy"
+          alt="Two-row diagram with three columns, one per world-model component: learn world states, predict dynamics, generate future states. Vision world models (top row) learn a mostly visible state from continuous video, predict the next state under an action, and are judged by realism. Living world models (bottom row) face one key question at each component. Q1: images across scales show only part of the biological state. Q2: dynamics must be learned from unpaired snapshots, and most combinations of interventions are never tested. Q3: generated futures, including counterfactuals, must be checked against real experiments.">
       </div>
-      <figcaption class="scroll-hint">Scroll the figure sideways to see all four columns. <a href="assets/img/figure1.svg">Open full size</a></figcaption>
+      <figcaption class="scroll-hint">Scroll the figure sideways to see all three columns. <a href="assets/img/figure1.svg">Open full size</a></figcaption>
       <ol class="qgrid">
         <li>
-          <span class="q">Q1 · Observe</span>
-          <h3>Learning dynamics from snapshots</h3>
-          <p>Living systems are observed through destructive, sparse, and unpaired samples. How can models learn how states evolve, and when is the dynamics identifiable?</p>
+          <span class="q">Q1 · State</span>
+          <h3>Learning world states</h3>
+          <p>What is the state of a living system, and how much of it can images reveal? How should a world model represent partially observed states across scales, and align them with molecular, spatial-omics, and clinical measurements?</p>
         </li>
         <li>
-          <span class="q">Q2 · State</span>
-          <h3>Images as states</h3>
-          <p>To what extent do morphology, structure, and texture encode molecular or clinical states that are not directly visible, and how should a world model handle this partial observability?</p>
+          <span class="q">Q2 · Dynamics</span>
+          <h3>Predicting dynamics under interventions</h3>
+          <p>How can a model learn how states evolve over time and respond to drugs, genetic edits, and treatments from destructive, unpaired snapshots rather than trajectories? When is the dynamics identifiable, and can predictions generalize to unseen interventions, their combinations, new cell types, and new patients?</p>
         </li>
         <li>
-          <span class="q">Q3 · Predict</span>
-          <h3>Conditional prediction and counterfactuals</h3>
-          <p>Given a perturbation, a drug, a treatment, or a time horizon, can a model predict or generate unseen states and generalize to new combinations of conditions, cell types, and patients?</p>
-        </li>
-        <li>
-          <span class="q">Q4 · Evaluate</span>
-          <h3>Trustworthy generative simulators</h3>
-          <p>When can a generated cell image or medical scan count as scientific evidence, and how should we evaluate it beyond visual realism?</p>
+          <span class="q">Q3 · Generation</span>
+          <h3>Generating trustworthy future states</h3>
+          <p>How should predicted states be rendered as images, videos, or structures, including counterfactuals? When can a generated cell image or medical scan count as scientific evidence? Trust requires consistency with known biology, calibrated uncertainty, and agreement with held-out experiments.</p>
         </li>
       </ol>
     </figure>
 
-    <h3 class="sub">One question, four scales</h3>
-    <p class="prose">The same template connects communities that rarely meet at the same venue.</p>
+    <h3 class="sub">One template, four scales</h3>
+    <p class="prose">The three components at four biological scales connect communities that rarely meet at the same venue.</p>
     <ul class="scales">
       <li>
-        <svg class="scale-ic"><use href="#i-molecule"/></svg>
+        <svg class="scale-ill" viewBox="0 0 240 84" aria-hidden="true" focusable="false"><g transform="translate(10 10)"><rect width="64" height="64" rx="6" fill="#cfcfcf"/>
+<g fill="#4a4a4a" opacity=".75"><ellipse cx="16" cy="18" rx="7" ry="5"/><ellipse cx="44" cy="14" rx="5" ry="7"/><ellipse cx="30" cy="34" rx="8" ry="6"/><ellipse cx="13" cy="48" rx="6" ry="6"/><ellipse cx="49" cy="46" rx="7" ry="5"/></g><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2"/></g><g transform="translate(116 25)"><path class="ln" d="M7.8 4.5 L0 9 L-7.8 4.5 V-4.5 L0 -9 L7.8 -4.5 Z" fill="#fde7a6" stroke-width="2"/><path class="ln" d="M7.8 -4.5 L13 -8.5" fill="none" stroke-width="2"/><circle class="ln" cx="15" cy="-10" r="2.6" fill="#fde7a6" stroke-width="1.8"/></g><path class="ln" d="M86 48 H146" fill="none" stroke-width="2.4"/><path d="M144 42 L154 48 L144 54 Z" fill="currentColor"/><g transform="translate(166 10)"><rect width="64" height="64" rx="6" fill="#e6eaf0"/><g fill="none" stroke-width="3.2" stroke-linecap="round" opacity=".9"><path stroke="#4fa3e8" d="M10 46 C16 22 28 52 34 30 S48 14 54 30"/><path stroke="#2a9d78" d="M10 40 C18 18 30 44 36 26 S50 22 54 42"/><path stroke="#e85bb8" d="M10 52 C14 30 26 58 32 38 S46 10 54 20"/></g><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2" stroke-dasharray="5 4"/></g></svg>
         <h4>Molecules</h4>
-        <p class="kv"><span>Observed</span>cryo-EM particles, predicted structures</p>
-        <p class="kv"><span>Condition</span>ligand, mutation</p>
-        <p class="ask">Can the model generate a conformational ensemble consistent with heterogeneous particle images?</p>
+        <p class="kv"><span>Observation</span>cryo-EM particles, predicted structures</p>
+        <p class="kv"><span>State</span>conformation</p>
+        <p class="kv"><span>Intervention</span>ligand, mutation</p>
+        <p class="ask"><span>Future state to generate</span>Conformational ensemble consistent with heterogeneous particle images</p>
       </li>
       <li>
-        <svg class="scale-ic"><use href="#i-cell"/></svg>
+        <svg class="scale-ill" viewBox="0 0 240 84" aria-hidden="true" focusable="false"><g transform="translate(10 10)"><rect width="64" height="64" rx="6" fill="#1d2233"/>
+<circle cx="18" cy="20" r="9" fill="#4fa3e8"/><circle cx="44" cy="16" r="6" fill="#3ecf8e"/><circle cx="38" cy="42" r="11" fill="#e85bb8"/><circle cx="38" cy="42" r="5" fill="#ffd0ee"/><circle cx="14" cy="48" r="5" fill="#3ecf8e"/><circle cx="54" cy="52" r="4" fill="#f2b632"/><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2"/></g><g transform="translate(106 25) rotate(-40) scale(.75)"><rect class="ln" x="-8" y="-16" width="16" height="32" rx="8" fill="#fff" stroke-width="2.4"/><path d="M-8 0 h16 v8 a8 8 0 0 1 -16 0 z" fill="#e05a47"/></g><g class="ln" transform="translate(130 28) scale(.8)" fill="none" stroke-width="2.4"><circle cx="-8" cy="4" r="5"/><circle cx="8" cy="4" r="5"/><path d="M-5 0 L8 -14 M5 0 L-8 -14"/></g><path class="ln" d="M86 48 H146" fill="none" stroke-width="2.4"/><path d="M144 42 L154 48 L144 54 Z" fill="currentColor"/><g transform="translate(166 10)"><rect width="64" height="64" rx="6" fill="#1d2233"/><circle cx="15" cy="16" r="7" fill="#4fa3e8"/><circle cx="51" cy="12" r="4" fill="#3ecf8e"/><path transform="translate(37 40) scale(.46)" d="M-40,-4 C-44,-20 -24,-26 -12,-18 C-2,-34 22,-30 24,-14 C42,-14 46,6 30,12 C34,28 10,32 0,20 C-12,32 -34,24 -30,10 C-46,8 -48,2 -40,-4 Z" fill="#e85bb8"/><circle cx="36" cy="40" r="6" fill="#ffd0ee"/><circle cx="9" cy="55" r="4" fill="#f2b632"/><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2" stroke-dasharray="5 4"/></g></svg>
         <h4>Cells</h4>
-        <p class="kv"><span>Observed</span>Cell Painting, live-cell and high-content imaging</p>
-        <p class="kv"><span>Condition</span>compound, CRISPR edit, dose, time</p>
-        <p class="ask">Can it predict morphology under unseen perturbations or their combinations?</p>
+        <p class="kv"><span>Observation</span>Cell Painting, live-cell and high-content imaging</p>
+        <p class="kv"><span>State</span>morphological and molecular state</p>
+        <p class="kv"><span>Intervention</span>compound, CRISPR edit, dose, time</p>
+        <p class="ask"><span>Future state to generate</span>Morphology under unseen perturbations or their combinations</p>
       </li>
       <li>
-        <svg class="scale-ic"><use href="#i-tissue"/></svg>
+        <svg class="scale-ill" viewBox="0 0 240 84" aria-hidden="true" focusable="false"><g transform="translate(10 10)"><rect width="64" height="64" rx="6" fill="#f4c9da"/>
+<path d="M6 22 Q22 12 34 24 T60 20" stroke="#e7a3c0" stroke-width="6" fill="none"/>
+<g fill="#6b3f8f"><circle cx="10" cy="40" r="3.2"/><circle cx="18" cy="46" r="3.2"/><circle cx="26" cy="38" r="3.2"/><circle cx="34" cy="48" r="3.2"/><circle cx="42" cy="40" r="3.2"/><circle cx="50" cy="50" r="3.2"/><circle cx="56" cy="38" r="3.2"/><circle cx="14" cy="56" r="3.2"/><circle cx="30" cy="57" r="3.2"/><circle cx="46" cy="58" r="3.2"/><circle cx="22" cy="10" r="3"/><circle cx="48" cy="8" r="3"/></g><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2"/></g><g transform="translate(120 25)"><circle class="ln" r="11" fill="#fff" stroke-width="2.2"/><path class="ln" d="M0 0 V-6.5 M0 0 L5 3" fill="none" stroke-width="2.2"/></g><path class="ln" d="M86 48 H146" fill="none" stroke-width="2.4"/><path d="M144 42 L154 48 L144 54 Z" fill="currentColor"/><g transform="translate(166 10)"><rect width="64" height="64" rx="6" fill="#f4c9da"/><path d="M4 42 Q20 30 32 42 T62 38" stroke="#e7a3c0" stroke-width="6" fill="none"/><path d="M8 12 Q24 4 40 12" stroke="#e7a3c0" stroke-width="5" fill="none"/><g fill="#1f8a68"><circle cx="10" cy="26" r="3.4"/><circle cx="18" cy="21" r="3.4"/><circle cx="14" cy="32" r="3.4"/><circle cx="24" cy="29" r="3.4"/></g><g fill="#3b7fd4"><circle cx="44" cy="22" r="3.4"/><circle cx="52" cy="28" r="3.4"/><circle cx="56" cy="18" r="3.4"/><circle cx="48" cy="13" r="3.4"/></g><g fill="#6b3f8f"><circle cx="12" cy="52" r="3.2"/><circle cx="22" cy="57" r="3.2"/><circle cx="36" cy="53" r="3.2"/><circle cx="48" cy="57" r="3.2"/><circle cx="56" cy="49" r="3.2"/></g><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2" stroke-dasharray="5 4"/></g></svg>
         <h4>Tissues</h4>
-        <p class="kv"><span>Observed</span>histopathology, spatial omics, organoid imaging</p>
-        <p class="kv"><span>Condition</span>treatment, development</p>
-        <p class="ask">Can it infer unobserved molecular state from morphology and forecast remodeling?</p>
+        <p class="kv"><span>Observation</span>histopathology, spatial omics, organoid imaging</p>
+        <p class="kv"><span>State</span>cell composition, molecular programs</p>
+        <p class="kv"><span>Intervention</span>treatment, development</p>
+        <p class="ask"><span>Future state to generate</span>Remodeled tissue, with molecular state inferred from morphology</p>
       </li>
       <li>
-        <svg class="scale-ic"><use href="#i-patient"/></svg>
+        <svg class="scale-ill" viewBox="0 0 240 84" aria-hidden="true" focusable="false"><g transform="translate(10 10)"><rect width="64" height="64" rx="6" fill="#111"/>
+<ellipse cx="32" cy="33" rx="23" ry="26" fill="#9a9a9a"/><ellipse cx="32" cy="33" rx="17" ry="20" fill="#bdbdbd"/>
+<path d="M32 9 V57" stroke="#777" stroke-width="2"/>
+<path d="M20 22 q6 4 0 9 M44 22 q-6 4 0 9 M19 40 q7 3 2 8 M45 40 q-7 3 -2 8" stroke="#888" stroke-width="1.6" fill="none"/><circle cx="40" cy="27" r="5" fill="#f2f2f2"/><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2"/></g><g transform="translate(120 25) rotate(-35)"><rect class="ln" x="-10" y="-5" width="19" height="10" rx="1.5" fill="#fff" stroke-width="2"/><rect x="-8.6" y="-3.4" width="9" height="6.8" fill="#8ab8ff"/><path class="ln" d="M9 0 H15 M15 -5.5 V5.5 M-10 0 H-18" fill="none" stroke-width="2"/></g><path class="ln" d="M86 48 H146" fill="none" stroke-width="2.4"/><path d="M144 42 L154 48 L144 54 Z" fill="currentColor"/><g transform="translate(166 10)"><rect width="64" height="64" rx="6" fill="#111"/>
+<ellipse cx="32" cy="33" rx="23" ry="26" fill="#9a9a9a"/><ellipse cx="32" cy="33" rx="17" ry="20" fill="#bdbdbd"/>
+<path d="M32 9 V57" stroke="#777" stroke-width="2"/>
+<path d="M20 22 q6 4 0 9 M44 22 q-6 4 0 9 M19 40 q7 3 2 8 M45 40 q-7 3 -2 8" stroke="#888" stroke-width="1.6" fill="none"/><circle cx="40" cy="27" r="3.5" fill="#f2f2f2"/><circle cx="40" cy="27" r="10" fill="none" stroke="#f2b632" stroke-width="2" stroke-dasharray="3 3"/><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2" stroke-dasharray="5 4"/></g></svg>
         <h4>Patients</h4>
-        <p class="kv"><span>Observed</span>longitudinal MRI/CT, endoscopic and surgical video</p>
-        <p class="kv"><span>Condition</span>disease course, therapy, surgical action</p>
-        <p class="ask">Can it forecast the next scan or the outcome of an action with calibrated uncertainty?</p>
+        <p class="kv"><span>Observation</span>longitudinal MRI/CT, endoscopic and surgical video</p>
+        <p class="kv"><span>State</span>anatomy, disease status</p>
+        <p class="kv"><span>Intervention</span>therapy, surgical action</p>
+        <p class="ask"><span>Future state to generate</span>Next scan or outcome of an action, with calibrated uncertainty</p>
       </li>
     </ul>
+    <p class="ill-note">Each sketch reads left to right: an observed image, an intervention, and the future image a living world model should generate (dashed outline).</p>
   </div>
 </section>
 
 <section class="section" id="topics" aria-labelledby="topics-title">
   <div class="wrap">
     <p class="eyebrow">Topics</p>
-    <h2 id="topics-title">Five themes</h2>
-    <p class="prose intro">The first two themes anchor the broad biomedical-vision community. The last three define what is distinctive about this workshop.</p>
+    <h2 id="topics-title">Four themes</h2>
+    <p class="prose intro">The first three themes follow the components of a living world model. The fourth is the evaluation that makes its outputs trustworthy.</p>
     <ol class="topics">
       <li>
-        <h3>Visual representations of biological and clinical states</h3>
-        <p>Representation learning for microscopy, Cell Painting, histopathology, and medical imaging. Alignment of images with molecular, spatial-omics, and clinical signals.</p>
+        <h3>World states from biomedical observations</h3>
+        <p>Representation learning for microscopy, Cell Painting, histopathology, and medical imaging. Latent states under partial observability. Alignment of images with molecular, spatial-omics, and clinical signals. 3D and 4D reconstruction of biological structures.</p>
       </li>
       <li>
-        <h3>Prediction and generation of state changes</h3>
-        <p>Image-based prediction of perturbation responses, image generation under drug and genetic interventions, disease-progression and longitudinal-imaging forecasting, counterfactual image generation, virtual staining and cross-modal generation.</p>
+        <h3>Dynamics under interventions</h3>
+        <p>Image-based prediction of responses to chemical and genetic perturbations. Disease-progression and longitudinal-imaging forecasting. Optimal transport, flow matching, and Schrödinger bridges between distributions. Dynamics from unpaired populations, sparse longitudinal data, and cryo-EM heterogeneity. Generalization to unseen interventions and their combinations.</p>
       </li>
-      <li class="core">
-        <h3>Learning dynamics from sparse and destructive observations</h3>
-        <p>Optimal transport, flow matching, and Schrödinger bridges between distributions. Dynamics from unpaired populations, sparse longitudinal data, and cryo-EM heterogeneity. Predicting motion or change from a single image.</p>
+      <li>
+        <h3>Generation of future states</h3>
+        <p>Image and video generation conditioned on drugs, genes, treatments, and time. Counterfactual image generation. Virtual staining and cross-modal generation. Conformational ensembles beyond static structures. Organ motion and surgical and endoscopic scene simulation.</p>
       </li>
-      <li class="core">
-        <h3>Structure, motion, and simulation across scales</h3>
-        <p>From static structures to conformational ensembles. Organ shape and motion. Surgical and endoscopic scene simulation. 3D and 4D reconstruction of biological structures.</p>
-      </li>
-      <li class="core">
-        <h3>Evaluation and trustworthiness of visual simulators</h3>
+      <li>
+        <h3>Evaluation and trustworthiness</h3>
         <p>Scientific metrics and benchmarks for generative simulators, out-of-distribution generalization, uncertainty estimation, hallucination detection, and interpretability.</p>
       </li>
     </ol>
@@ -314,10 +318,10 @@
         <ol class="schedule">
           <li><time>08:30</time><span>Opening: what is a living world model?</span></li>
           <li class="talk"><time>08:40</time><span><b>Invited talks 1–2</b> World models and video generation; cellular perturbation imaging</span></li>
-          <li class="oral"><time>09:40</time><span><b>Orals I</b> Learning dynamics and predicting state changes (3 talks)</span></li>
+          <li class="oral"><time>09:40</time><span><b>Orals I</b> World states and dynamics under interventions (3 talks)</span></li>
           <li class="break"><time>10:10</time><span><b>Coffee and posters</b> All accepted papers, both tracks</span></li>
           <li class="talk"><time>11:00</time><span><b>Invited talks 3–4</b> Medical imaging and disease progression; structural dynamics</span></li>
-          <li class="oral"><time>12:00</time><span><b>Orals II</b> Evaluation and trustworthiness (2 talks)</span></li>
+          <li class="oral"><time>12:00</time><span><b>Orals II</b> Generating trustworthy future states (2 talks)</span></li>
           <li class="panel"><time>12:20</time><span><b>Panel</b> When is a generated cell or scan scientific evidence?</span></li>
           <li><time>12:55</time><span>Awards and closing, until 13:00</span></li>
         </ol>
@@ -328,7 +332,7 @@
           <p>When is a generated cell or scan scientific evidence?</p>
           <footer>The panel question</footer>
         </blockquote>
-        <p>Speakers from vision, biology, and medicine debate how to evaluate generative simulators, when predictions are trustworthy enough to guide experiments or care, and which benchmarks the community should build next. Audience questions, including questions submitted online, take the last 15 minutes.</p>
+        <p>Speakers from vision, biology, and medicine debate Key Question 3: how to evaluate generated future states, when predictions are trustworthy enough to guide experiments or care, and which benchmarks the community should build next. Audience questions, including questions submitted online, take the last 15 minutes.</p>
         <details>
           <summary>Taking part remotely</summary>
           <p>One organizer relays online questions in every Q&amp;A slot. Authors who cannot travel may present through a prerecorded video, with their poster displayed by an organizer or coauthor. An asynchronous discussion channel stays open for two weeks after the workshop. Accepted papers, posters, and slides (with author consent) will be posted on this website, and the organizers will publish a short summary of open problems and proposed evaluation practices within four weeks of the workshop.</p>
