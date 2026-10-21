@@ -3,7 +3,7 @@
 Website of **Living World Models: Predictive Vision for Biology and Medicine**, a half-day workshop proposed to CVPR 2027.
 Live at <https://boom5426.github.io/livingwm/> (GitHub Pages, branch `main`, root folder).
 
-A static site: one HTML page, one stylesheet, no JavaScript and no build step. `.nojekyll` stops GitHub Pages from running Jekyll.
+A static site: one HTML page, one stylesheet and one small script, with no build step. `.nojekyll` stops GitHub Pages from running Jekyll.
 
 ## Layout
 
@@ -11,10 +11,11 @@ A static site: one HTML page, one stylesheet, no JavaScript and no build step. `
 | --- | --- |
 | `index.html` | All page content |
 | `assets/css/style.css` | Styles; color tokens for light and dark mode are at the top |
+| `assets/js/cells.js` | Decorative hero animation (drifting, dividing cells). Pauses off-screen and shows a still frame under reduced motion |
 | `assets/img/figure1.svg` | Figure 1, converted from the proposal's vector PDF |
 | `assets/img/og.png` | Link preview image (1200 x 630), rendered from `tools/og.html` |
 | `assets/img/people/` | Organizer headshots (400 px WebP), from each organizer's homepage with their consent |
-| `assets/fonts/` | Fraunces and Inter (woff2, `@fontsource` 5.3.0), SIL Open Font License 1.1 |
+| `assets/fonts/` | Bricolage Grotesque (headings), Inter (text), Fraunces italic (math and quotes); woff2 from `@fontsource` 5.3.0, SIL Open Font License 1.1 |
 | `tools/build_assets.py` | Regenerates the figure, the headshots and the preview image |
 
 ## Editing

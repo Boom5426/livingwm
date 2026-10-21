@@ -7,8 +7,7 @@
 <meta name="description" content="Living World Models: Predictive Vision for Biology and Medicine. A half-day workshop proposed for CVPR 2027 in Seattle on how computer vision can learn world models of living systems, from molecules and cells to tissues and patients.">
 <link rel="canonical" href="https://boom5426.github.io/livingwm/">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#12141a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#070b14">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LivingWM">
 <meta property="og:title" content="Living World Models: Predictive Vision for Biology and Medicine">
@@ -17,19 +16,38 @@
 <meta property="og:image" content="https://boom5426.github.io/livingwm/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Living World Models workshop title above a diagram contrasting vision world models with living world models.">
+<meta property="og:image:alt" content="Living World Models workshop title over a field of fluorescent cells, above a diagram contrasting vision world models with living world models.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
+<script defer src="assets/js/cells.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<svg width="0" height="0" class="sprite" aria-hidden="true">
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.9-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 15.1 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6.5 3.5h7l4 4v13h-11z"/><path d="M13.5 3.5v4h4M9.5 12.5h5M9.5 16h5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-molecule" viewBox="0 0 48 48"><circle cx="13" cy="31" r="6"/><circle cx="33" cy="14" r="6"/><circle cx="36" cy="35" r="5"/><path d="M18 27.5l10-8.5M19 32.5l12 2"/></symbol>
+  <symbol id="i-cell" viewBox="0 0 48 48"><path d="M7 24c0-10 8-16.5 17.5-15.5S40.5 17 39.5 25.5 30 40.5 21.5 39.5 7 33.5 7 24z"/><circle cx="23.5" cy="24" r="6.5"/></symbol>
+  <symbol id="i-tissue" viewBox="0 0 48 48"><circle cx="15" cy="17" r="8"/><circle cx="32" cy="17" r="8"/><circle cx="23.5" cy="32" r="8"/><circle cx="15" cy="17" r="2" class="fill"/><circle cx="32" cy="17" r="2" class="fill"/><circle cx="23.5" cy="32" r="2" class="fill"/></symbol>
+  <symbol id="i-patient" viewBox="0 0 48 48"><circle cx="24" cy="15" r="7"/><path d="M9 40c1-8.5 7-13.5 15-13.5S38 31.5 39 40"/></symbol>
+  <symbol id="i-video" viewBox="0 0 48 48"><rect x="6" y="11" width="36" height="26" rx="4"/><path d="M20.5 18.5v11l9-5.5z" class="fill"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34" rx="5"/><ellipse cx="24" cy="24" rx="10" ry="12"/><path d="M24 12v24M17 19q4 2.5 0 5M31 19q-4 2.5 0 5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 48 48"><path d="M8 12h22v15H17l-6 5v-5H8z"/><path d="M34 19h6v14h-3v5l-6-5H22v-3"/></symbol>
+</svg>
+
 <header class="site-header">
   <nav class="nav" aria-label="Sections">
-    <a class="brand" href="#top" aria-label="LivingWM, back to top"><img src="assets/img/favicon.svg" alt="" width="26" height="26"><span>Living<b>WM</b></span></a>
+    <a class="brand" href="#top" aria-label="LivingWM, back to top">
+      <svg viewBox="0 0 64 64" width="26" height="26" aria-hidden="true"><g transform="translate(31 32) scale(0.98)"><path d="M-26,-4 C-24,-20 -6,-24 8,-20 C24,-16 30,-2 24,10 C18,22 -2,24 -14,18 C-26,12 -28,6 -26,-4 Z" fill="#cdeee3" stroke="#7fe3c1" stroke-width="3.2"/><circle r="8.5" fill="#2a9d78"/></g></svg>
+      <span>Living<b>WM</b></span>
+    </a>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#questions">Questions</a></li>
@@ -38,7 +56,6 @@
       <li><a href="#dates">Dates</a></li>
       <li><a href="#program">Program</a></li>
       <li><a href="#organizers">Organizers</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -46,107 +63,130 @@
 <main id="main">
 
 <section class="hero" id="top" aria-labelledby="title">
-  <div class="wrap">
+  <canvas class="cells" aria-hidden="true"></canvas>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
     <p class="status"><span class="dot" aria-hidden="true"></span>Workshop proposal · CVPR 2027</p>
-    <h1 id="title">Living World Models</h1>
+    <h1 id="title"><span class="glow">Living</span> World Models</h1>
     <p class="subtitle">Predictive Vision for Biology and Medicine</p>
-    <p class="meta">Half-day workshop · Seattle, USA · 20 or 21 June 2027</p>
-    <p class="note">This workshop has been proposed to CVPR 2027, which announces its decision on 22 December 2026. If the workshop is accepted, the call for papers opens in January 2027.</p>
+    <p class="pitch">How can computer vision learn world models of living systems, from molecules and cells to tissues and patients?</p>
+    <ul class="hero-meta">
+      <li><svg class="ic"><use href="#i-cal"/></svg>20 or 21 June 2027</li>
+      <li><svg class="ic"><use href="#i-pin"/></svg>Seattle, USA</li>
+      <li><svg class="ic"><use href="#i-clock"/></svg>Half day, in person</li>
+    </ul>
     <p class="actions">
-      <a class="btn btn-primary" href="#cfp">Call for papers</a>
-      <a class="btn" href="#questions">Key questions</a>
+      <a class="btn btn-primary" href="#cfp">Call for papers <svg class="ic"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-ghost" href="#questions">The four questions</a>
     </p>
+    <p class="hero-note">Proposed to CVPR 2027. CVPR announces its decision on 22 December 2026. If the workshop is accepted, the call for papers opens in January 2027.</p>
   </div>
-  <figure class="figure">
-    <div class="figure-scroll" tabindex="0" role="region" aria-label="Figure 1 (scrolls sideways on small screens)">
-      <img src="assets/img/figure1.svg" width="1121" height="409" fetchpriority="high"
-        alt="Two-row diagram with four columns: Observe, State and action, Predict, Evaluate. Vision world models (top row) watch continuous video of one scene, act on a mostly visible state, predict the next frame, and are judged by realism. Living world models (bottom row) break each assumption: observations are destructive, unpaired snapshots across scales (Q1); images reveal only part of the biological state, and most combinations of conditions are never observed (Q2); models must predict responses to unseen interventions and generate counterfactuals (Q3); and generated outputs must hold up as scientific evidence (Q4).">
-    </div>
-    <figcaption><b>Same pipeline, two worlds.</b> Vision world models (top) observe continuous video of one scene, act on a mostly visible state, predict the next frame, and are judged by realism. Living systems (bottom) break each assumption, which defines the four key questions of the workshop (Q1–Q4). <span class="scroll-hint">Scroll the figure sideways to see all four columns.</span></figcaption>
-  </figure>
+</section>
+
+<section class="glance-wrap" aria-label="At a glance">
+  <dl class="glance wrap">
+    <div><dt><svg class="ic"><use href="#i-cal"/></svg>When</dt><dd>20 or 21 June 2027<small>Half day, date set by CVPR</small></dd></div>
+    <div><dt><svg class="ic"><use href="#i-pin"/></svg>Where</dt><dd>CVPR 2027, Seattle<small>In person, talks recorded</small></dd></div>
+    <div><dt><svg class="ic"><use href="#i-doc"/></svg>Papers</dt><dd>Archival and non-archival<small>Up to 8 or 4 pages, on OpenReview</small></dd></div>
+    <div><dt><svg class="ic"><use href="#i-clock"/></svg>Deadlines</dt><dd>6 Mar · 17 Apr 2027<small>Proposed, 23:59 AoE</small></dd></div>
+  </dl>
 </section>
 
 <section class="section" id="about" aria-labelledby="about-title">
   <div class="wrap">
-    <h2 id="about-title">About the workshop</h2>
-    <p class="lead">Living systems are never static: molecules switch conformations, cells respond to perturbations, tissues remodel, and diseases progress. Yet most visual data in biology and medicine are snapshots: fixed, sparse, and often destructive.</p>
-    <p>The Living World Models workshop asks how computer vision can learn world models of such systems: inferring biological states from images, forecasting how they evolve, simulating responses to perturbations and treatments, and generating faithful counterfactuals. Bringing together researchers in world models, generative modeling, 4D vision, microscopy, and medical imaging, we aim to define the methods, benchmarks, and evaluation standards for predictive vision of life.</p>
+    <p class="eyebrow">About</p>
+    <div class="about-grid">
+      <h2 id="about-title">Life is never static. Its images mostly are.</h2>
+      <div class="prose">
+        <p class="lead">Living systems are never static: molecules switch conformations, cells respond to perturbations, tissues remodel, and diseases progress. Yet most visual data in biology and medicine are snapshots: fixed, sparse, and often destructive.</p>
+        <p>The Living World Models workshop asks how computer vision can learn world models of such systems: inferring biological states from images, forecasting how they evolve, simulating responses to perturbations and treatments, and generating faithful counterfactuals. Bringing together researchers in world models, generative modeling, 4D vision, microscopy, and medical imaging, we aim to define the methods, benchmarks, and evaluation standards for predictive vision of life.</p>
+      </div>
+    </div>
 
-    <h3>What is a living world model?</h3>
-    <p>Let <i>x</i> be an image of a biological system (a micrograph, a slide, a scan, a particle image), <i>s<sub>t</sub></i> its latent biological or clinical state at time <i>t</i>, and <i>a</i> a condition such as a perturbation, a drug, a treatment, or elapsed time. A living world model has three parts.</p>
-    <dl class="parts">
-      <div>
-        <dt>Encoder</dt>
-        <dd class="math">q<sub>φ</sub>(s | x)</dd>
-        <dd>infers the state from an image</dd>
-      </div>
-      <div>
-        <dt>Transition</dt>
-        <dd class="math">p<sub>θ</sub>(s<sub>t+Δ</sub> | s<sub>t</sub>, a)</dd>
-        <dd>predicts how the state changes under condition <i>a</i></dd>
-      </div>
-      <div>
-        <dt>Decoder</dt>
-        <dd class="math">g<sub>ψ</sub>(x | s)</dd>
-        <dd>renders a state as an image</dd>
-      </div>
-    </dl>
-    <p>Because snapshots are usually unpaired, the transition is often identifiable only at the population level, as a map that carries the state distribution <i>ρ<sub>t</sub></i> to <i>ρ<sup>a</sup><sub>t+Δ</sub></i>. Optimal transport, flow matching, and Schrödinger bridges are natural tools for this setting.</p>
+    <h3 class="sub">What is a living world model?</h3>
+    <p class="prose">Let <i>x</i> be an image of a biological system (a micrograph, a slide, a scan, a particle image), <i>s<sub>t</sub></i> its latent biological or clinical state at time <i>t</i>, and <i>a</i> a condition such as a perturbation, a drug, a treatment, or elapsed time.</p>
+    <ol class="flow" aria-label="Encoder, transition and decoder of a living world model">
+      <li class="node"><span class="sym"><i>x</i></span><small>image</small></li>
+      <li class="edge"><span class="lbl"><b>Encoder</b><span class="math">q<sub>φ</sub>(s | x)</span></span><span class="arrow" aria-hidden="true"></span><small>infers the state</small></li>
+      <li class="node"><span class="sym"><i>s<sub>t</sub></i></span><small>state</small></li>
+      <li class="edge edge-key"><span class="lbl"><b>Transition</b><span class="math">p<sub>θ</sub>(s<sub>t+Δ</sub> | s<sub>t</sub>, a)</span></span><span class="arrow" aria-hidden="true"></span><small>under condition <i>a</i></small></li>
+      <li class="node"><span class="sym"><i>s<sub>t+Δ</sub></i></span><small>future state</small></li>
+      <li class="edge"><span class="lbl"><b>Decoder</b><span class="math">g<sub>ψ</sub>(x | s)</span></span><span class="arrow" aria-hidden="true"></span><small>renders an image</small></li>
+      <li class="node"><span class="sym"><i>x̂</i></span><small>predicted</small></li>
+    </ol>
+    <p class="prose">Because snapshots are usually unpaired, the transition is often identifiable only at the population level, as a map that carries the state distribution <i>ρ<sub>t</sub></i> to <i>ρ<sup>a</sup><sub>t+Δ</sub></i>. Optimal transport, flow matching, and Schrödinger bridges are natural tools for this setting.</p>
 
-    <h3>Who should attend</h3>
-    <p>LivingWM brings together researchers in world models, generative modeling, and 4D vision with people who do not usually attend CVPR: cell biologists, structural biologists, pathologists, radiologists, and drug-discovery scientists who generate the images that predictive vision would model. Each invited talk pairs a methodological contribution with a concrete biological or clinical question.</p>
+    <div class="audience">
+      <h3>Who should attend</h3>
+      <p>Researchers in vision and machine learning, together with the people who generate the images that predictive vision would model. Each invited talk pairs a methodological contribution with a concrete biological or clinical question.</p>
+      <ul class="chips">
+        <li>World models</li><li>Generative models</li><li>4D vision</li><li>Microscopy</li><li>Cell biology</li><li>Structural biology</li><li>Pathology</li><li>Radiology</li><li>Drug discovery</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section class="section section-alt" id="questions" aria-labelledby="questions-title">
   <div class="wrap">
-    <h2 id="questions-title">Four key questions</h2>
-    <p class="intro">Biology and medicine ask what vision world models ask: how does the state of a system change under an intervention? But they ask it under conditions that break the assumptions of current world models. Talks, papers, and the panel are organized around four questions, marked Q1–Q4 in the figure.</p>
-    <ol class="questions">
-      <li>
-        <span class="q">Q1</span>
-        <h3>Learning dynamics from snapshots</h3>
-        <p>Video world models observe continuous trajectories, while living systems are observed through destructive, sparse, and unpaired samples. How can models learn how states evolve under these conditions, and when is the dynamics identifiable?</p>
-      </li>
-      <li>
-        <span class="q">Q2</span>
-        <h3>Images as states</h3>
-        <p>To what extent do morphology, structure, and texture encode molecular or clinical states that are not directly visible, and how should a world model handle this partial observability?</p>
-      </li>
-      <li>
-        <span class="q">Q3</span>
-        <h3>Conditional prediction and counterfactuals</h3>
-        <p>Given a perturbation, a drug, a treatment, or a time horizon, can a model predict or generate unseen states and generalize to new combinations of conditions, cell types, and patients?</p>
-      </li>
-      <li>
-        <span class="q">Q4</span>
-        <h3>Trustworthy generative simulators</h3>
-        <p>When can a generated cell image or medical scan count as scientific evidence, and how should we evaluate it beyond visual realism?</p>
-      </li>
-    </ol>
+    <p class="eyebrow">Key questions</p>
+    <h2 id="questions-title">Same pipeline, two worlds</h2>
+    <p class="prose intro">Biology and medicine ask what vision world models ask: how does the state of a system change under an intervention? But they ask it under conditions that break each assumption of current world models. Talks, papers, and the panel are organized around the four questions this creates.</p>
+    <figure class="figure-card">
+      <div class="figure-scroll" tabindex="0" role="region" aria-label="Figure 1 (scrolls sideways on small screens)">
+        <img src="assets/img/figure1.svg" width="1121" height="409" loading="lazy"
+          alt="Two-row diagram with four columns: Observe, State and action, Predict, Evaluate. Vision world models (top row) watch continuous video of one scene, act on a mostly visible state, predict the next frame, and are judged by realism. Living world models (bottom row) break each assumption: observations are destructive, unpaired snapshots across scales (Q1); images reveal only part of the biological state, and most combinations of conditions are never observed (Q2); models must predict responses to unseen interventions and generate counterfactuals (Q3); and generated outputs must hold up as scientific evidence (Q4).">
+      </div>
+      <figcaption class="scroll-hint">Scroll the figure sideways to see all four columns. <a href="assets/img/figure1.svg">Open full size</a></figcaption>
+      <ol class="qgrid">
+        <li>
+          <span class="q">Q1 · Observe</span>
+          <h3>Learning dynamics from snapshots</h3>
+          <p>Living systems are observed through destructive, sparse, and unpaired samples. How can models learn how states evolve, and when is the dynamics identifiable?</p>
+        </li>
+        <li>
+          <span class="q">Q2 · State</span>
+          <h3>Images as states</h3>
+          <p>To what extent do morphology, structure, and texture encode molecular or clinical states that are not directly visible, and how should a world model handle this partial observability?</p>
+        </li>
+        <li>
+          <span class="q">Q3 · Predict</span>
+          <h3>Conditional prediction and counterfactuals</h3>
+          <p>Given a perturbation, a drug, a treatment, or a time horizon, can a model predict or generate unseen states and generalize to new combinations of conditions, cell types, and patients?</p>
+        </li>
+        <li>
+          <span class="q">Q4 · Evaluate</span>
+          <h3>Trustworthy generative simulators</h3>
+          <p>When can a generated cell image or medical scan count as scientific evidence, and how should we evaluate it beyond visual realism?</p>
+        </li>
+      </ol>
+    </figure>
 
     <h3 class="sub">One question, four scales</h3>
-    <p>The same template connects communities that rarely meet at the same venue.</p>
+    <p class="prose">The same template connects communities that rarely meet at the same venue.</p>
     <ul class="scales">
       <li>
+        <svg class="scale-ic"><use href="#i-molecule"/></svg>
         <h4>Molecules</h4>
         <p class="kv"><span>Observed</span>cryo-EM particles, predicted structures</p>
         <p class="kv"><span>Condition</span>ligand, mutation</p>
         <p class="ask">Can the model generate a conformational ensemble consistent with heterogeneous particle images?</p>
       </li>
       <li>
+        <svg class="scale-ic"><use href="#i-cell"/></svg>
         <h4>Cells</h4>
         <p class="kv"><span>Observed</span>Cell Painting, live-cell and high-content imaging</p>
         <p class="kv"><span>Condition</span>compound, CRISPR edit, dose, time</p>
         <p class="ask">Can it predict morphology under unseen perturbations or their combinations?</p>
       </li>
       <li>
+        <svg class="scale-ic"><use href="#i-tissue"/></svg>
         <h4>Tissues</h4>
         <p class="kv"><span>Observed</span>histopathology, spatial omics, organoid imaging</p>
         <p class="kv"><span>Condition</span>treatment, development</p>
         <p class="ask">Can it infer unobserved molecular state from morphology and forecast remodeling?</p>
       </li>
       <li>
+        <svg class="scale-ic"><use href="#i-patient"/></svg>
         <h4>Patients</h4>
         <p class="kv"><span>Observed</span>longitudinal MRI/CT, endoscopic and surgical video</p>
         <p class="kv"><span>Condition</span>disease course, therapy, surgical action</p>
@@ -158,8 +198,9 @@
 
 <section class="section" id="topics" aria-labelledby="topics-title">
   <div class="wrap">
-    <h2 id="topics-title">Topics</h2>
-    <p class="intro">We invite contributions in five themes. The first two anchor the broad biomedical-vision community, and the last three define what is distinctive about this workshop.</p>
+    <p class="eyebrow">Topics</p>
+    <h2 id="topics-title">Five themes</h2>
+    <p class="prose intro">The first two themes anchor the broad biomedical-vision community. The last three define what is distinctive about this workshop.</p>
     <ol class="topics">
       <li>
         <h3>Visual representations of biological and clinical states</h3>
@@ -169,15 +210,15 @@
         <h3>Prediction and generation of state changes</h3>
         <p>Image-based prediction of perturbation responses, image generation under drug and genetic interventions, disease-progression and longitudinal-imaging forecasting, counterfactual image generation, virtual staining and cross-modal generation.</p>
       </li>
-      <li>
+      <li class="core">
         <h3>Learning dynamics from sparse and destructive observations</h3>
         <p>Optimal transport, flow matching, and Schrödinger bridges between distributions. Dynamics from unpaired populations, sparse longitudinal data, and cryo-EM heterogeneity. Predicting motion or change from a single image.</p>
       </li>
-      <li>
+      <li class="core">
         <h3>Structure, motion, and simulation across scales</h3>
         <p>From static structures to conformational ensembles. Organ shape and motion. Surgical and endoscopic scene simulation. 3D and 4D reconstruction of biological structures.</p>
       </li>
-      <li>
+      <li class="core">
         <h3>Evaluation and trustworthiness of visual simulators</h3>
         <p>Scientific metrics and benchmarks for generative simulators, out-of-distribution generalization, uncertainty estimation, hallucination detection, and interpretability.</p>
       </li>
@@ -188,134 +229,167 @@
 
 <section class="section section-alt" id="cfp" aria-labelledby="cfp-title">
   <div class="wrap">
-    <h2 id="cfp-title">Call for papers</h2>
-    <p class="callout">If the workshop is accepted, submissions open on OpenReview in January 2027. The submission link and formatting instructions will be posted here.</p>
-    <div class="tracks">
-      <article>
-        <h3>Archival track</h3>
-        <p class="spec">Up to 8 pages, excluding references · CVPR 2027 style</p>
-        <p>Full papers, published in the CVPR 2027 workshop proceedings. Each paper receives three reviews.</p>
-      </article>
-      <article>
-        <h3>Non-archival track</h3>
-        <p class="spec">Up to 4 pages, excluding references</p>
-        <p>Extended abstracts, which CVPR does not regard as prior publication, and recently accepted papers from other venues that are relevant to the workshop. Presented as posters and listed on this website only. Each paper receives at least two reviews.</p>
-      </article>
+    <p class="eyebrow">Call for papers</p>
+    <h2 id="cfp-title">Two tracks on OpenReview</h2>
+    <div class="cfp-grid">
+      <div>
+        <p class="callout">If the workshop is accepted, submissions open on OpenReview in January 2027. The submission link and formatting instructions will be posted here.</p>
+        <div class="tracks">
+          <article>
+            <p class="track-tag">Archival</p>
+            <h3>Full papers</h3>
+            <p class="spec">Up to 8 pages, excluding references · CVPR 2027 style</p>
+            <p>Published in the CVPR 2027 workshop proceedings. Three reviews per paper.</p>
+          </article>
+          <article>
+            <p class="track-tag">Non-archival</p>
+            <h3>Extended abstracts and recent papers</h3>
+            <p class="spec">Up to 4 pages, excluding references</p>
+            <p>Extended abstracts, which CVPR does not regard as prior publication, and recently accepted papers from other venues. Presented as posters and listed on this website only. At least two reviews per paper.</p>
+          </article>
+        </div>
+
+        <div class="details-group">
+          <details>
+            <summary>Review process</summary>
+            <p>Both tracks use double-blind review on OpenReview, and every author needs a complete OpenReview profile. At least one reviewer per paper has domain expertise in the relevant biological or clinical setting. The criteria are relevance, technical soundness, quality of evidence, and value for discussion. Organizers and reviewers recuse themselves from conflicted submissions, including those from their own institutions, and an organizer without a conflict oversees each decision.</p>
+          </details>
+          <details>
+            <summary>Responsible submissions</summary>
+            <ul class="checks">
+              <li>Papers that use clinical data state the data source, the de-identification, and the ethics approval or data-use agreement. Public datasets are used under their licenses.</li>
+              <li>Synthetic cell images and medical scans are clearly labeled as synthetic.</li>
+              <li>Accepted papers state their intended use and limitations. Predictive models of disease progression are not validated clinical tools.</li>
+              <li>We encourage reporting of subgroup performance and dataset composition.</li>
+              <li>The workshop follows the CVPR 2027 policy on large language models for authors and reviewers. Reviewers may not upload submissions to external AI services.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Awards and student support</summary>
+            <p>We will present a Best Paper award and a Best Student Paper award. The non-archival track welcomes biology-first and medicine-first submissions that use vision methods, and an online mentoring hour, held by the organizers before the camera-ready deadline, supports first-time CVPR authors.</p>
+          </details>
+        </div>
+      </div>
+
+      <aside class="dates-card" id="dates" aria-labelledby="dates-title">
+        <h3 id="dates-title">Key dates</h3>
+        <p class="small">Proposed. Final dates follow the CVPR decision. All deadlines 23:59 AoE.</p>
+        <ol class="timeline">
+          <li><time datetime="2026-12-22">22 Dec 2026</time><span>CVPR workshop decision</span></li>
+          <li><time datetime="2027-01">Jan 2027</time><span>Call for papers and OpenReview open</span></li>
+          <li class="key"><time datetime="2027-03-06">6 Mar 2027</time><span>Archival submission deadline</span></li>
+          <li><time datetime="2027-03-25">25 Mar 2027</time><span>Archival notification</span></li>
+          <li><time datetime="2027-03-29">29 Mar 2027</time><span>Archival author metadata due</span></li>
+          <li class="key"><time datetime="2027-04-17">17 Apr 2027</time><span>Non-archival submission deadline</span></li>
+          <li><time datetime="2027-04-23">23 Apr 2027</time><span>Archival camera-ready due</span></li>
+          <li><time datetime="2027-05-05">5 May 2027</time><span>Non-archival notification</span></li>
+          <li><time datetime="2027-05-20">20 May 2027</time><span>Final program online</span></li>
+          <li class="key"><time datetime="2027-06">20 or 21 Jun</time><span>Workshop in Seattle</span></li>
+        </ol>
+      </aside>
     </div>
+  </div>
+</section>
 
-    <h3>Review</h3>
-    <p>Both tracks use double-blind review on OpenReview, and every author needs a complete OpenReview profile. At least one reviewer per paper has domain expertise in the relevant biological or clinical setting. The criteria are relevance, technical soundness, quality of evidence, and value for discussion. Organizers and reviewers recuse themselves from conflicted submissions, including those from their own institutions, and an organizer without a conflict oversees each decision.</p>
+<section class="section" id="program" aria-labelledby="program-title">
+  <div class="wrap">
+    <p class="eyebrow">Program</p>
+    <h2 id="program-title">A half day across scales</h2>
+    <p class="prose intro">About 4.5 hours with four invited talks, oral presentations from both paper tracks, a poster session, and a panel. The workshop is in person, and all talks are streamed and recorded for the CVPR virtual site.</p>
 
-    <h3>Responsible submissions</h3>
-    <ul class="checks">
-      <li>Papers that use clinical data state the data source, the de-identification, and the ethics approval or data-use agreement. Public datasets are used under their licenses.</li>
-      <li>Synthetic cell images and medical scans are clearly labeled as synthetic.</li>
-      <li>Accepted papers state their intended use and limitations. Predictive models of disease progression are not validated clinical tools.</li>
-      <li>We encourage reporting of subgroup performance and dataset composition.</li>
-      <li>The workshop follows the CVPR 2027 policy on large language models for authors and reviewers. Reviewers may not upload submissions to external AI services.</li>
+    <h3 class="sub">Invited speakers</h3>
+    <p class="prose">To be announced. The talks will span four areas, and the panel includes a biologist or clinician who uses image-based predictions in practice.</p>
+    <ul class="slots">
+      <li><svg class="slot-ic"><use href="#i-video"/></svg><b>Video and interactive world models</b><span>To be announced</span></li>
+      <li><svg class="slot-ic"><use href="#i-cell"/></svg><b>Cellular perturbation imaging</b><span>To be announced</span></li>
+      <li><svg class="slot-ic"><use href="#i-scan"/></svg><b>Medical imaging and disease progression</b><span>To be announced</span></li>
+      <li><svg class="slot-ic"><use href="#i-molecule"/></svg><b>Structural dynamics</b><span>To be announced</span></li>
+      <li class="slot-panel"><svg class="slot-ic"><use href="#i-chat"/></svg><b>Panel: biology and medicine in practice</b><span>To be announced</span></li>
     </ul>
 
-    <h3>Awards and students</h3>
-    <p>We will present a Best Paper award and a Best Student Paper award. The non-archival track welcomes biology-first and medicine-first submissions that use vision methods, and an online mentoring hour, held by the organizers before the camera-ready deadline, supports first-time CVPR authors.</p>
-  </div>
-</section>
-
-<section class="section" id="dates" aria-labelledby="dates-title">
-  <div class="wrap">
-    <h2 id="dates-title">Key dates</h2>
-    <p class="intro">These dates are proposed. Final dates will be posted after the CVPR decision. All deadlines are 23:59 Anywhere on Earth (AoE).</p>
-    <ol class="timeline">
-      <li><time datetime="2026-12-22">22 Dec 2026</time><span>CVPR workshop decision</span></li>
-      <li><time datetime="2027-01">January 2027</time><span>Call for papers and OpenReview open</span></li>
-      <li class="key"><time datetime="2027-03-06">6 Mar 2027</time><span>Archival track: submission deadline</span></li>
-      <li><time datetime="2027-03-25">25 Mar 2027</time><span>Archival track: notification</span></li>
-      <li><time datetime="2027-03-29">29 Mar 2027</time><span>Archival track: author metadata due</span></li>
-      <li class="key"><time datetime="2027-04-17">17 Apr 2027</time><span>Non-archival track: submission deadline</span></li>
-      <li><time datetime="2027-04-23">23 Apr 2027</time><span>Archival track: camera-ready due</span></li>
-      <li><time datetime="2027-05-05">5 May 2027</time><span>Non-archival track: notification</span></li>
-      <li><time datetime="2027-05-20">20 May 2027</time><span>Final program and talk titles online</span></li>
-      <li class="key"><time datetime="2027-06">20 or 21 Jun 2027</time><span>Workshop at CVPR 2027, Seattle</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="section section-alt" id="program" aria-labelledby="program-title">
-  <div class="wrap">
-    <h2 id="program-title">Program</h2>
-    <p class="intro">A half-day program of about 4.5 hours, with four invited talks, oral presentations from both paper tracks, a poster session, and a panel. The workshop is in person, and all talks are streamed and recorded for the CVPR virtual site.</p>
-
-    <h3>Invited speakers</h3>
-    <p>To be announced. The talks will cover video and interactive world models, cellular perturbation imaging, medical imaging and disease progression, and structural dynamics. The panel includes a biologist or clinician who uses image-based predictions in practice.</p>
-
-    <h3>Preliminary schedule</h3>
-    <p class="small">Morning slot shown, in Pacific Daylight Time. An afternoon slot keeps the same order.</p>
-    <div class="table-wrap">
-      <table class="schedule">
-        <thead><tr><th scope="col">Time</th><th scope="col">Session</th></tr></thead>
-        <tbody>
-          <tr><td>08:30–08:40</td><td>Opening: what is a living world model?</td></tr>
-          <tr><td>08:40–09:40</td><td><b>Invited talks 1–2:</b> world models and video generation; cellular perturbation imaging</td></tr>
-          <tr><td>09:40–10:10</td><td><b>Orals I:</b> learning dynamics and predicting state changes (3 talks)</td></tr>
-          <tr class="break"><td>10:10–11:00</td><td>Coffee break and poster session (all accepted papers, both tracks)</td></tr>
-          <tr><td>11:00–12:00</td><td><b>Invited talks 3–4:</b> medical imaging and disease progression; structural dynamics</td></tr>
-          <tr><td>12:00–12:20</td><td><b>Orals II:</b> evaluation and trustworthiness (2 talks)</td></tr>
-          <tr><td>12:20–12:55</td><td><b>Panel:</b> when is a generated cell or scan scientific evidence?</td></tr>
-          <tr><td>12:55–13:00</td><td>Awards and closing</td></tr>
-        </tbody>
-      </table>
+    <div class="program-grid">
+      <div>
+        <h3 class="sub">Preliminary schedule</h3>
+        <p class="small">Morning slot shown, Pacific Daylight Time. An afternoon slot keeps the same order.</p>
+        <ol class="schedule">
+          <li><time>08:30</time><span>Opening: what is a living world model?</span></li>
+          <li class="talk"><time>08:40</time><span><b>Invited talks 1–2</b> World models and video generation; cellular perturbation imaging</span></li>
+          <li class="oral"><time>09:40</time><span><b>Orals I</b> Learning dynamics and predicting state changes (3 talks)</span></li>
+          <li class="break"><time>10:10</time><span><b>Coffee and posters</b> All accepted papers, both tracks</span></li>
+          <li class="talk"><time>11:00</time><span><b>Invited talks 3–4</b> Medical imaging and disease progression; structural dynamics</span></li>
+          <li class="oral"><time>12:00</time><span><b>Orals II</b> Evaluation and trustworthiness (2 talks)</span></li>
+          <li class="panel"><time>12:20</time><span><b>Panel</b> When is a generated cell or scan scientific evidence?</span></li>
+          <li><time>12:55</time><span>Awards and closing, until 13:00</span></li>
+        </ol>
+        <p class="small">Invited talks: 25 minutes plus 5 for questions. Orals: 8 minutes plus 2 for questions.</p>
+      </div>
+      <div>
+        <blockquote class="panel-quote">
+          <p>When is a generated cell or scan scientific evidence?</p>
+          <footer>The panel question</footer>
+        </blockquote>
+        <p>Speakers from vision, biology, and medicine debate how to evaluate generative simulators, when predictions are trustworthy enough to guide experiments or care, and which benchmarks the community should build next. Audience questions, including questions submitted online, take the last 15 minutes.</p>
+        <details>
+          <summary>Taking part remotely</summary>
+          <p>One organizer relays online questions in every Q&amp;A slot. Authors who cannot travel may present through a prerecorded video, with their poster displayed by an organizer or coauthor. An asynchronous discussion channel stays open for two weeks after the workshop. Accepted papers, posters, and slides (with author consent) will be posted on this website, and the organizers will publish a short summary of open problems and proposed evaluation practices within four weeks of the workshop.</p>
+        </details>
+      </div>
     </div>
-    <p class="small">Invited talks are 25 minutes plus 5 minutes for questions. Orals are 8 minutes plus 2 minutes for questions.</p>
-
-    <h3>Panel</h3>
-    <p>Speakers from vision, biology, and medicine debate Key Question 4: how to evaluate generative simulators, when predictions are trustworthy enough to guide experiments or care, and which benchmarks the community should build next. Audience questions, including questions submitted online, take the last 15 minutes.</p>
-
-    <h3>Taking part remotely</h3>
-    <p>One organizer relays online questions in every Q&amp;A slot. Authors who cannot travel may present through a prerecorded video, with their poster displayed by an organizer or coauthor. An asynchronous discussion channel stays open for two weeks after the workshop. Accepted papers, posters, and slides (with author consent) will be posted on this website, and the organizers will publish a short summary of open problems and proposed evaluation practices within four weeks of the workshop.</p>
   </div>
 </section>
 
-<section class="section" id="organizers" aria-labelledby="organizers-title">
+<section class="section section-alt" id="organizers" aria-labelledby="organizers-title">
   <div class="wrap">
-    <h2 id="organizers-title">Organizers</h2>
+    <p class="eyebrow">Organizers</p>
+    <h2 id="organizers-title">Three communities, one team</h2>
     <ul class="people">
       <li>
-        <img src="assets/img/people/bo-li.webp" alt="" width="128" height="128" loading="lazy">
-        <h3><a href="https://boom5426.github.io/">Bo Li</a></h3>
-        <p class="affil">University of Macau</p>
-        <p class="role">PhD candidate; visiting student, National University of Singapore</p>
-        <p class="focus">AI for cell biology and image-based perturbation modeling</p>
+        <img src="assets/img/people/bo-li.webp" alt="" width="144" height="144" loading="lazy">
+        <div>
+          <h3><a href="https://boom5426.github.io/">Bo Li</a></h3>
+          <p class="affil">University of Macau</p>
+          <p class="role">PhD candidate; visiting student, National University of Singapore</p>
+          <p class="focus">AI for cell biology and image-based perturbation modeling</p>
+        </div>
       </li>
       <li>
-        <img src="assets/img/people/taoyong-cui.webp" alt="" width="128" height="128" loading="lazy">
-        <h3><a href="https://taoyongcui.github.io/">Taoyong Cui</a></h3>
-        <p class="affil">The Chinese University of Hong Kong</p>
-        <p class="role">PhD student; visiting PhD researcher, Stanford University</p>
-        <p class="focus">Machine learning for molecular simulation and physical representations</p>
+        <img src="assets/img/people/taoyong-cui.webp" alt="" width="144" height="144" loading="lazy">
+        <div>
+          <h3><a href="https://taoyongcui.github.io/">Taoyong Cui</a></h3>
+          <p class="affil">The Chinese University of Hong Kong</p>
+          <p class="role">PhD student; visiting PhD researcher, Stanford University</p>
+          <p class="focus">Machine learning for molecular simulation and physical representations</p>
+        </div>
       </li>
       <li>
-        <img src="assets/img/people/ling-yang.webp" alt="" width="128" height="128" loading="lazy">
-        <h3><a href="https://yangling0818.github.io/">Ling Yang</a></h3>
-        <p class="affil">Princeton University</p>
-        <p class="role">Postdoctoral researcher; incoming Assistant Professor, Peking University</p>
-        <p class="focus">Generative and diffusion models</p>
+        <img src="assets/img/people/ling-yang.webp" alt="" width="144" height="144" loading="lazy">
+        <div>
+          <h3><a href="https://yangling0818.github.io/">Ling Yang</a></h3>
+          <p class="affil">Princeton University</p>
+          <p class="role">Postdoctoral researcher; incoming Assistant Professor, Peking University</p>
+          <p class="focus">Generative and diffusion models</p>
+        </div>
       </li>
     </ul>
-  </div>
-</section>
-
-<section class="section section-alt" id="contact" aria-labelledby="contact-title">
-  <div class="wrap">
-    <h2 id="contact-title">Contact</h2>
-    <p>Questions about the workshop: <a href="mailto:Boom985426@gmail.com">Boom985426@gmail.com</a></p>
   </div>
 </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <p>LivingWM · Workshop proposed to CVPR 2027 · Last updated 21 October 2026</p>
-    <p>Figure 1 by the organizers. Fonts: Fraunces and Inter, under the SIL Open Font License 1.1. <a href="https://github.com/Boom5426/livingwm">Source</a></p>
+<footer class="site-footer" id="contact">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">Living<b>WM</b></p>
+      <p>Living World Models: Predictive Vision for Biology and Medicine. A workshop proposed to CVPR 2027.</p>
+    </div>
+    <div>
+      <p class="footer-label">Contact</p>
+      <p><a href="mailto:Boom985426@gmail.com">Boom985426@gmail.com</a></p>
+    </div>
+    <div class="footer-meta">
+      <p>Last updated 21 October 2026 · <a href="https://github.com/Boom5426/livingwm">Source</a></p>
+      <p>Figure 1 by the organizers. Fonts: Bricolage Grotesque, Inter and Fraunces (SIL Open Font License 1.1).</p>
+    </div>
   </div>
 </footer>
 </body>
