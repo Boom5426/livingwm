@@ -101,17 +101,17 @@
     </div>
 
     <h3 class="sub">What is a living world model?</h3>
-    <p class="prose">Let <i>x</i> be an image of a biological system (a micrograph, a tissue section, a light-sheet volume, a particle image), <i>s<sub>t</sub></i> its latent biological state at time <i>t</i>, and <i>a</i> an intervention such as a genetic or chemical perturbation, a combination of them, or elapsed time. A living world model has three components.</p>
+    <p class="prose">Let <i>x</i> be an observation of a biological system: an image (a micrograph, a tissue section, a light-sheet volume, a particle image), possibly paired with molecular measurements such as a transcriptome. Let <i>s<sub>t</sub></i> be its latent biological state at time <i>t</i>, and <i>a</i> an intervention, such as a genetic or chemical perturbation or a combination of them, applied over an interval <i>Δ</i>. A living world model has three components.</p>
     <ol class="flow" aria-label="The three components of a living world model: encoder, transition and decoder">
-      <li class="node"><span class="sym"><i>x</i></span><small>image</small></li>
+      <li class="node"><span class="sym"><i>x</i></span><small>observation</small></li>
       <li class="edge"><span class="lbl"><b>Encoder</b><span class="math">q<sub>φ</sub>(s | x)</span></span><span class="arrow" aria-hidden="true"></span><small>learns the world state</small></li>
       <li class="node"><span class="sym"><i>s<sub>t</sub></i></span><small>state</small></li>
       <li class="edge edge-key"><span class="lbl"><b>Transition</b><span class="math">p<sub>θ</sub>(s<sub>t+Δ</sub> | s<sub>t</sub>, a)</span></span><span class="arrow" aria-hidden="true"></span><small>predicts dynamics under <i>a</i></small></li>
       <li class="node"><span class="sym"><i>s<sub>t+Δ</sub></i></span><small>future state</small></li>
       <li class="edge"><span class="lbl"><b>Decoder</b><span class="math">g<sub>ψ</sub>(x | s)</span></span><span class="arrow" aria-hidden="true"></span><small>generates the future</small></li>
-      <li class="node"><span class="sym"><i>x<sub>t+Δ</sub></i></span><small>future image</small></li>
+      <li class="node"><span class="sym"><i>x<sub>t+Δ</sub></i></span><small>future observation</small></li>
     </ol>
-    <p class="prose">Other measurements, such as transcriptomes or protein assays, can enter the encoder as further views of <i>s</i>, and serve as independent evidence when a prediction is tested. Because snapshots are usually unpaired, the transition is often identifiable only at the population level, as a map that carries the state distribution <i>ρ<sub>t</sub></i> to <i>ρ<sup>a</sup><sub>t+Δ</sub></i>. Optimal transport, flow matching, and Schrödinger bridges are natural tools for this setting, but each picks one coupling among the many that match the two distributions. Which cell becomes which is then an assumption (for example, least displacement) that a model should state and, where possible, test against lineage tracing or live imaging.</p>
+    <p class="prose">The decoder usually generates images, but also molecular or functional readouts. Predictions are tested against measurements the model never saw, such as a held-out assay. Because snapshots are usually unpaired, the data often determine only how the state distribution changes, from <i>ρ<sub>t</sub></i> to <i>ρ<sup>a</sup><sub>t+Δ</sub></i>, not which state becomes which. Optimal transport, flow matching, and Schrödinger bridges are natural tools for this setting, but each picks one coupling among the many that match the two distributions. That coupling is an assumption (for example, least displacement) that a model should state and, where possible, test against lineage tracing or live imaging.</p>
 
     <div class="audience">
       <h3>Who should attend</h3>
@@ -148,7 +148,7 @@
         <li>
           <span class="q">Q3 · Generation</span>
           <h3>Generating trustworthy future states</h3>
-          <p>How should predicted states be rendered as images, videos, or structures, including counterfactuals? When can such predictions be trusted to guide experiments? We propose a four-level evaluation ladder for discussion, not as an established standard: (L1) visual fidelity, (L2) consistency with known biology, (L3) calibrated predictive validity on held-out interventions, time points, or cell types, and (L4) utility for experimental decisions, such as choosing which perturbation to test next. The levels are ordered by strength of evidence, not as prerequisites, and L1 applies only when the output is an image.</p>
+          <p>How should predicted states be rendered as images, videos, structures, or molecular and functional readouts, including counterfactuals? When can such predictions be trusted to guide experiments? We propose a four-level evaluation ladder for discussion, not as an established standard: (L1) visual fidelity, (L2) consistency with known biology, (L3) calibrated predictive validity on held-out interventions, time points, or cell types, and (L4) utility for experimental decisions, such as choosing which perturbation to test next. The levels are ordered by strength of evidence, not as prerequisites, and L1 applies only when the output is an image.</p>
         </li>
       </ol>
     </figure>
@@ -224,7 +224,7 @@
         <p>Scientific metrics and benchmarks for generative simulators, validation against held-out interventions and independent assays, out-of-distribution generalization, uncertainty estimation, hallucination detection, provenance of synthetic images, and interpretability.</p>
       </li>
     </ol>
-    <p class="scope">General-purpose methods for world models, video generation, and 4D vision are in scope whenever the submission argues for their relevance to a question in the life sciences. Static representation learning is in scope when it serves state inference, dynamics, or intervention prediction; segmentation or classification alone, clinical imaging, and models without a visual component are not. Authors will state which level of the evaluation ladder their results reach. When the call opens, this site will list public datasets that support L3 tests (held-out interventions, time points, or cell types), curated by the organizers.</p>
+    <p class="scope">General-purpose methods for world models, video generation, and 4D vision are in scope whenever the submission argues for their relevance to a question in the life sciences. Static representation learning is in scope when it serves state inference, dynamics, or intervention prediction; segmentation or classification alone, clinical diagnosis or prognosis, and models without a visual component are not. Authors will state which level of the evaluation ladder their results reach. When the call opens, this site will list public datasets that support L3 tests (held-out interventions, time points, or cell types), curated by the organizers.</p>
   </div>
 </section>
 
