@@ -28,8 +28,9 @@ IMG = SITE / "assets" / "img"
 # Source URL and square crop box (left, top, right, bottom) in source pixels.
 # Boxes are centred on the face so the head fills about three quarters of the
 # frame where the source resolution allows. The first three photos come from
-# the organizers' homepages; the rest from the Scientific World Models
-# workshop site, which the same organizers maintain.
+# the organizers' homepages, Mengyue Yang's from her University of Bristol
+# research profile, and the rest from the Scientific World Models workshop
+# site, which the same organizers maintain.
 SWM_PEOPLE = "https://taoyongcui.github.io/scientific-world-models/assets/img/people"
 PHOTOS: dict[str, tuple[str, tuple[int, int, int, int] | None]] = {
     "bo-li": ("https://boom5426.github.io/images/CV_me.jpg", (0, 25, 500, 525)),
@@ -39,11 +40,13 @@ PHOTOS: dict[str, tuple[str, tuple[int, int, int, int] | None]] = {
     "zhenfei-yin": (f"{SWM_PEOPLE}/zhenfei-yin.webp", (54, 0, 614, 560)),
     "lu-mi": (f"{SWM_PEOPLE}/lu-mi.webp", (101, 40, 541, 480)),
     "dandan-zhang": (f"{SWM_PEOPLE}/dandan-zhang.webp", (0, 0, 236, 236)),
-    "xinyue-xu": (f"{SWM_PEOPLE}/xinyue-xu.webp", (74, 18, 224, 168)),
+    "mengyue-yang": ("https://research-information.bris.ac.uk/files-asset/498307234/profile_photo.jpeg", (155, 60, 595, 500)),
     "philip-torr": (f"{SWM_PEOPLE}/philip-torr.webp", None),
     "pheng-ann-heng": (f"{SWM_PEOPLE}/pheng-ann-heng.webp", (6, 4, 256, 254)),
 }
 PHOTO_SIZE = 400  # px, upper bound; smaller sources are kept at native size
+# Some hosts (the Bristol research portal) refuse urllib's default agent.
+USER_AGENT = "livingwm-site-builder/1.0 (+https://boom5426.github.io/livingwm/)"
 PHOTO_QUALITY = 82
 OG_SIZE = (1200, 630)  # Open Graph recommended size
 
@@ -60,7 +63,8 @@ def build_photos() -> None:
     out_dir = IMG / "people"
     out_dir.mkdir(parents=True, exist_ok=True)
     for name, (url, box) in PHOTOS.items():
-        with urllib.request.urlopen(url, timeout=30) as resp:
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(req, timeout=30) as resp:
             img = Image.open(io.BytesIO(resp.read())).convert("RGB")
         if box is not None:
             img = img.crop(box)
