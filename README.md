@@ -1,6 +1,6 @@
 # LivingWM website
 
-Website of **Living World Models: Predictive Vision for Biology and Medicine**, a half-day workshop proposed to CVPR 2027.
+Website of **Living World Models: Predictive Vision for Biology**, a half-day workshop proposed to CVPR 2027.
 Live at <https://boom5426.github.io/livingwm/> (GitHub Pages, branch `main`, root folder).
 
 A static site: one HTML page, one stylesheet and one small script, with no build step. `.nojekyll` stops GitHub Pages from running Jekyll.

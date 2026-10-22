@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Living World Models (LivingWM) · CVPR 2027 Workshop Proposal</title>
-<meta name="description" content="Living World Models: Predictive Vision for Biology and Medicine. A half-day workshop proposed for CVPR 2027 in Seattle on world models of living systems: learning world states from biomedical images, predicting their dynamics under interventions, and generating trustworthy future states.">
+<meta name="description" content="Living World Models: Predictive Vision for Biology. A half-day workshop proposed for CVPR 2027 in Seattle on world models of living systems: learning world states from images, predicting their dynamics under interventions, and generating trustworthy future states.">
 <link rel="canonical" href="https://boom5426.github.io/livingwm/">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#070b14">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LivingWM">
-<meta property="og:title" content="Living World Models: Predictive Vision for Biology and Medicine">
+<meta property="og:title" content="Living World Models: Predictive Vision for Biology">
 <meta property="og:description" content="A half-day workshop proposed for CVPR 2027 on learning world states of living systems from images, predicting their dynamics under interventions, and generating trustworthy future states.">
 <meta property="og:url" content="https://boom5426.github.io/livingwm/">
 <meta property="og:image" content="https://boom5426.github.io/livingwm/assets/img/og.png">
@@ -65,8 +65,8 @@
   <div class="wrap hero-inner">
     <p class="status"><span class="dot" aria-hidden="true"></span>Workshop proposal · CVPR 2027</p>
     <h1 id="title"><span class="glow">Living</span> World Models</h1>
-    <p class="subtitle">Predictive Vision for Biology and Medicine</p>
-    <p class="pitch">How can we learn world states of living systems from biomedical visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states?</p>
+    <p class="subtitle">Predictive Vision for Biology</p>
+    <p class="pitch">How can we learn world states of living systems from visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states?</p>
     <ul class="hero-meta">
       <li><svg class="ic"><use href="#i-cal"/></svg>20 or 21 June 2027</li>
       <li><svg class="ic"><use href="#i-pin"/></svg>Seattle, USA</li>
@@ -95,13 +95,13 @@
     <div class="about-grid">
       <h2 id="about-title">Life is never static. Its images mostly are.</h2>
       <div class="prose">
-        <p class="lead">Living systems change under genes, drugs, disease, and treatment, yet biomedical images offer only partial and often unpaired views of these changes. The Living World Models workshop asks how to learn world states from biomedical visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states.</p>
-        <p>Beyond realism, such predictions must hold up against independent measurements and unseen interventions, and prove useful for experimental or clinical decisions. Through invited talks, papers, and an open-problems forum, we bring together vision and life-science researchers to establish shared problems and evaluation principles for living world models.</p>
+        <p class="lead">Living systems, from molecules to organisms, change under genes, drugs, and time, yet images offer only partial and often unpaired views of these changes. The Living World Models workshop asks how to learn world states from visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states.</p>
+        <p>Beyond realism, such predictions must hold up against independent measurements and unseen interventions, and help decide which experiments to run. Through invited talks, papers, and an open-problems forum, we bring together vision and life-science researchers to establish shared problems and evaluation principles for living world models.</p>
       </div>
     </div>
 
     <h3 class="sub">What is a living world model?</h3>
-    <p class="prose">Let <i>x</i> be an image of a biological system (a micrograph, a slide, a scan, a particle image), <i>s<sub>t</sub></i> its latent biological or clinical state at time <i>t</i>, and <i>a</i> an intervention such as a perturbation, a drug, a treatment, or elapsed time. A living world model has three components.</p>
+    <p class="prose">Let <i>x</i> be an image of a biological system (a micrograph, a tissue section, a light-sheet volume, a particle image), <i>s<sub>t</sub></i> its latent biological state at time <i>t</i>, and <i>a</i> an intervention such as a genetic or chemical perturbation, a combination of them, or elapsed time. A living world model has three components.</p>
     <ol class="flow" aria-label="The three components of a living world model: encoder, transition and decoder">
       <li class="node"><span class="sym"><i>x</i></span><small>image</small></li>
       <li class="edge"><span class="lbl"><b>Encoder</b><span class="math">q<sub>φ</sub>(s | x)</span></span><span class="arrow" aria-hidden="true"></span><small>learns the world state</small></li>
@@ -111,13 +111,13 @@
       <li class="edge"><span class="lbl"><b>Decoder</b><span class="math">g<sub>ψ</sub>(x | s)</span></span><span class="arrow" aria-hidden="true"></span><small>generates the future</small></li>
       <li class="node"><span class="sym"><i>x<sub>t+Δ</sub></i></span><small>future image</small></li>
     </ol>
-    <p class="prose">Because snapshots are usually unpaired, the transition is often identifiable only at the population level, as a map that carries the state distribution <i>ρ<sub>t</sub></i> to <i>ρ<sup>a</sup><sub>t+Δ</sub></i>. Optimal transport, flow matching, and Schrödinger bridges are natural tools for this setting, but each picks one coupling among the many that match the two distributions. Which cell becomes which is then an assumption (for example, least displacement) that a model should state and, where possible, test against lineage tracing or live imaging.</p>
+    <p class="prose">Other measurements, such as transcriptomes or protein assays, can enter the encoder as further views of <i>s</i>, and serve as independent evidence when a prediction is tested. Because snapshots are usually unpaired, the transition is often identifiable only at the population level, as a map that carries the state distribution <i>ρ<sub>t</sub></i> to <i>ρ<sup>a</sup><sub>t+Δ</sub></i>. Optimal transport, flow matching, and Schrödinger bridges are natural tools for this setting, but each picks one coupling among the many that match the two distributions. Which cell becomes which is then an assumption (for example, least displacement) that a model should state and, where possible, test against lineage tracing or live imaging.</p>
 
     <div class="audience">
       <h3>Who should attend</h3>
-      <p>Researchers in vision and machine learning, together with the people who generate the images that predictive vision would model. Each invited talk pairs a methodological contribution with a concrete biological or clinical question.</p>
+      <p>Researchers in vision and machine learning, together with the people who generate the images that predictive vision would model. Each invited talk pairs a methodological contribution with a concrete biological question.</p>
       <ul class="chips">
-        <li>World models</li><li>Generative models</li><li>4D vision</li><li>Microscopy</li><li>Cell biology</li><li>Structural biology</li><li>Pathology</li><li>Radiology</li><li>Drug discovery</li>
+        <li>World models</li><li>Generative models</li><li>4D vision</li><li>Microscopy</li><li>Cell biology</li><li>Developmental biology</li><li>Structural biology</li><li>Neuroscience</li><li>Drug discovery</li>
       </ul>
     </div>
   </div>
@@ -127,7 +127,7 @@
   <div class="wrap">
     <p class="eyebrow">Key questions</p>
     <h2 id="questions-title">Three components, two worlds</h2>
-    <p class="prose intro">The workshop is organized around one core question. <em>How can we learn world states of living systems from biomedical visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states?</em> Vision world models answer it for video, where the state is mostly visible and predictions are judged by realism and physical plausibility. Living systems meet the same difficulties in a more extreme form, and raise one key question at each component. Talks, papers, and the panel address these three.</p>
+    <p class="prose intro">The workshop is organized around one core question. <em>How can we learn world states of living systems from visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states?</em> Vision world models answer it for video, where the state is mostly visible and predictions are judged by realism and physical plausibility. Living systems meet the same difficulties in a more extreme form, and raise one key question at each component. Talks, papers, and the panel address these three.</p>
     <figure class="figure-card">
       <div class="figure-scroll" tabindex="0" role="region" aria-label="Figure 1 (scrolls sideways on small screens)">
         <img src="assets/img/figure1.svg" width="1121" height="424" loading="lazy"
@@ -138,23 +138,23 @@
         <li>
           <span class="q">Q1 · State</span>
           <h3>Learning world states</h3>
-          <p>What is the state of a living system, and how much of it can images reveal? How should a world model represent partially observed states across scales, and align them with molecular, spatial-omics, and clinical measurements?</p>
+          <p>What is the state of a living system, and how much of it can images reveal? How should a world model represent partially observed states across scales, and align them with molecular, spatial-omics, and functional measurements?</p>
         </li>
         <li>
           <span class="q">Q2 · Dynamics</span>
           <h3>Predicting dynamics under interventions</h3>
-          <p>How can a model learn how states evolve over time and respond to drugs, genetic edits, and treatments from destructive, unpaired snapshots rather than trajectories? When are the dynamics identifiable, and can predictions generalize to unseen interventions, their combinations, new cell types, and new patients?</p>
+          <p>How can a model learn how states evolve over time and respond to drugs and genetic edits from destructive, unpaired snapshots rather than trajectories? When are the dynamics identifiable, and can predictions generalize to unseen interventions, their combinations, new cell types, and new organisms?</p>
         </li>
         <li>
           <span class="q">Q3 · Generation</span>
           <h3>Generating trustworthy future states</h3>
-          <p>How should predicted states be rendered as images, videos, or structures, including counterfactuals? When can such predictions be trusted to guide experiments or clinical research? We propose a four-level evaluation ladder for discussion, not as an established standard: (L1) visual fidelity, (L2) consistency with known biology, (L3) calibrated predictive validity on held-out interventions, time points, or patients, and (L4) utility for experimental or clinical decisions.</p>
+          <p>How should predicted states be rendered as images, videos, or structures, including counterfactuals? When can such predictions be trusted to guide experiments? We propose a four-level evaluation ladder for discussion, not as an established standard: (L1) visual fidelity, (L2) consistency with known biology, (L3) calibrated predictive validity on held-out interventions, time points, or cell types, and (L4) utility for experimental decisions, such as choosing which perturbation to test next. The levels are ordered by strength of evidence, not as prerequisites, and L1 applies only when the output is an image.</p>
         </li>
       </ol>
     </figure>
 
     <h3 class="sub">One template, four scales</h3>
-    <p class="prose">The three components at four biological scales connect communities that rarely meet at the same venue.</p>
+    <p class="prose">The three components at four biological scales, from molecules to organisms, connect communities that rarely meet at the same venue. All four are laboratory settings: the experimenter sets the intervention, as an agent sets its action, and a new experiment can test a prediction. Work at a single scale is in scope, and work that links scales is especially welcome.</p>
     <ul class="scales">
       <li>
         <svg class="scale-ill" viewBox="0 0 240 84" aria-hidden="true" focusable="false"><g transform="translate(10 10)"><rect width="64" height="64" rx="6" fill="#cfcfcf"/>
@@ -179,24 +179,18 @@
 <path d="M6 22 Q22 12 34 24 T60 20" stroke="#e7a3c0" stroke-width="6" fill="none"/>
 <g fill="#6b3f8f"><circle cx="10" cy="40" r="3.2"/><circle cx="18" cy="46" r="3.2"/><circle cx="26" cy="38" r="3.2"/><circle cx="34" cy="48" r="3.2"/><circle cx="42" cy="40" r="3.2"/><circle cx="50" cy="50" r="3.2"/><circle cx="56" cy="38" r="3.2"/><circle cx="14" cy="56" r="3.2"/><circle cx="30" cy="57" r="3.2"/><circle cx="46" cy="58" r="3.2"/><circle cx="22" cy="10" r="3"/><circle cx="48" cy="8" r="3"/></g><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2"/></g><g transform="translate(120 25)"><circle class="ln" r="11" fill="#fff" stroke-width="2.2"/><path class="ln" d="M0 0 V-6.5 M0 0 L5 3" fill="none" stroke-width="2.2"/></g><path class="ln" d="M86 48 H146" fill="none" stroke-width="2.4"/><path d="M144 42 L154 48 L144 54 Z" fill="currentColor"/><g transform="translate(166 10)"><rect width="64" height="64" rx="6" fill="#f4c9da"/><path d="M4 42 Q20 30 32 42 T62 38" stroke="#e7a3c0" stroke-width="6" fill="none"/><path d="M8 12 Q24 4 40 12" stroke="#e7a3c0" stroke-width="5" fill="none"/><g fill="#1f8a68"><circle cx="10" cy="26" r="3.4"/><circle cx="18" cy="21" r="3.4"/><circle cx="14" cy="32" r="3.4"/><circle cx="24" cy="29" r="3.4"/></g><g fill="#3b7fd4"><circle cx="44" cy="22" r="3.4"/><circle cx="52" cy="28" r="3.4"/><circle cx="56" cy="18" r="3.4"/><circle cx="48" cy="13" r="3.4"/></g><g fill="#6b3f8f"><circle cx="12" cy="52" r="3.2"/><circle cx="22" cy="57" r="3.2"/><circle cx="36" cy="53" r="3.2"/><circle cx="48" cy="57" r="3.2"/><circle cx="56" cy="49" r="3.2"/></g><rect class="ln" x="-4" y="-4" width="72" height="72" rx="9" fill="none" stroke-width="2" stroke-dasharray="5 4"/></g></svg>
         <h4>Tissues</h4>
-        <p class="kv"><span>Observation</span>histopathology, spatial omics, organoid imaging</p>
+        <p class="kv"><span>Observation</span>tissue sections, spatial omics, organoid imaging</p>
         <p class="kv"><span>State</span>cell composition, molecular programs</p>
-        <p class="kv"><span>Intervention</span>treatment, development</p>
+        <p class="kv"><span>Intervention</span>drug, genetic edit, development</p>
         <p class="ask"><span>Future state to generate</span>Remodeled tissue, with molecular state inferred from morphology</p>
       </li>
       <li>
-        <svg class="scale-ill" viewBox="0 0 240 84" aria-hidden="true" focusable="false"><g transform="translate(10 10)"><rect width="64" height="64" rx="6" fill="#111"/>
-<ellipse cx="32" cy="33" rx="23" ry="26" fill="#9a9a9a"/><ellipse cx="32" cy="33" rx="17" ry="20" fill="#bdbdbd"/>
-<path d="M32 9 V57" stroke="#777" stroke-width="2"/>
-<path d="M20 22 q6 4 0 9 M44 22 q-6 4 0 9 M19 40 q7 3 2 8 M45 40 q-7 3 -2 8" stroke="#888" stroke-width="1.6" fill="none"/><circle cx="40" cy="27" r="5" fill="#f2f2f2"/><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2"/></g><g transform="translate(120 25) rotate(-35)"><rect class="ln" x="-10" y="-5" width="19" height="10" rx="1.5" fill="#fff" stroke-width="2"/><rect x="-8.6" y="-3.4" width="9" height="6.8" fill="#8ab8ff"/><path class="ln" d="M9 0 H15 M15 -5.5 V5.5 M-10 0 H-18" fill="none" stroke-width="2"/></g><path class="ln" d="M86 48 H146" fill="none" stroke-width="2.4"/><path d="M144 42 L154 48 L144 54 Z" fill="currentColor"/><g transform="translate(166 10)"><rect width="64" height="64" rx="6" fill="#111"/>
-<ellipse cx="32" cy="33" rx="23" ry="26" fill="#9a9a9a"/><ellipse cx="32" cy="33" rx="17" ry="20" fill="#bdbdbd"/>
-<path d="M32 9 V57" stroke="#777" stroke-width="2"/>
-<path d="M20 22 q6 4 0 9 M44 22 q-6 4 0 9 M19 40 q7 3 2 8 M45 40 q-7 3 -2 8" stroke="#888" stroke-width="1.6" fill="none"/><circle cx="40" cy="27" r="3.5" fill="#f2f2f2"/><circle cx="40" cy="27" r="10" fill="none" stroke="#f2b632" stroke-width="2" stroke-dasharray="3 3"/><rect class="ln" x="-4" y="-4" width="72" height="72" rx="9" fill="none" stroke-width="2" stroke-dasharray="5 4"/></g></svg>
-        <h4>Patients</h4>
-        <p class="kv"><span>Observation</span>longitudinal MRI/CT, endoscopic and surgical video</p>
-        <p class="kv"><span>State</span>anatomy, disease status</p>
-        <p class="kv"><span>Intervention</span>therapy, surgical action</p>
-        <p class="ask"><span>Future state to generate</span>Next scan or outcome of an action, with calibrated uncertainty</p>
+        <svg class="scale-ill" viewBox="0 0 240 84" aria-hidden="true" focusable="false"><g transform="translate(10 10)"><rect width="64" height="64" rx="6" fill="#0d1117"/><path d="M30 27.5 C42 28 52 29.5 61 31 L61 37 C52 38.5 42 40 30 40.5 Z" fill="#5f7d70" opacity=".35"/><ellipse cx="21" cy="43.5" rx="8" ry="3.6" fill="#3d4a44"/><path d="M5 34 C5 26 11 23 18 23 C29 23 41 29 58 32.5 L58 35.5 C41 39 29 45 18 45 C11 45 5 42 5 34 Z" fill="#24302b" stroke="#6f8f80" stroke-width="1.3"/><circle cx="11.5" cy="32.5" r="3.8" fill="#1a1a1a" stroke="#8a9a94" stroke-width="1.1"/><g fill="#5ef08a"><circle cx="17.5" cy="27.5" r="2"/><circle cx="21.5" cy="26.5" r="1.9"/><circle cx="25.5" cy="28.5" r="2"/><circle cx="28.5" cy="31.5" r="1.7"/><circle cx="19.5" cy="31" r="1.9"/><circle cx="23.5" cy="32.5" r="2"/><circle cx="27" cy="35.5" r="1.8"/><circle cx="18" cy="36" r="1.8"/><circle cx="22.5" cy="38" r="1.8"/><circle cx="33" cy="33" r="1.5"/><circle cx="38" cy="33.4" r="1.4"/><circle cx="43" cy="33.7" r="1.3"/><circle cx="48" cy="34" r="1.2"/><circle cx="53" cy="34.2" r="1.1"/></g><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2"/></g><g class="ln" transform="translate(120 28) scale(.8)" fill="none" stroke-width="2.4"><circle cx="-8" cy="4" r="5"/><circle cx="8" cy="4" r="5"/><path d="M-5 0 L8 -14 M5 0 L-8 -14"/></g><path class="ln" d="M86 48 H146" fill="none" stroke-width="2.4"/><path d="M144 42 L154 48 L144 54 Z" fill="currentColor"/><g transform="translate(166 10)"><rect width="64" height="64" rx="6" fill="#0d1117"/><path d="M30 27.5 C42 28 52 29.5 61 31 L61 37 C52 38.5 42 40 30 40.5 Z" fill="#5f7d70" opacity=".35"/><ellipse cx="21" cy="43.5" rx="8" ry="3.6" fill="#3d4a44"/><path d="M5 34 C5 26 11 23 18 23 C29 23 41 29 58 32.5 L58 35.5 C41 39 29 45 18 45 C11 45 5 42 5 34 Z" fill="#24302b" stroke="#6f8f80" stroke-width="1.3"/><circle cx="11.5" cy="32.5" r="3.8" fill="#1a1a1a" stroke="#8a9a94" stroke-width="1.1"/><g fill="#5ef08a" opacity=".55"><circle cx="17.5" cy="27.5" r="1.6"/><circle cx="19.5" cy="31" r="1.5"/><circle cx="18" cy="36" r="1.5"/><circle cx="33" cy="33" r="1.3"/><circle cx="43" cy="33.7" r="1.2"/><circle cx="53" cy="34.2" r="1"/></g><g fill="#f2b632"><circle cx="21.5" cy="26.5" r="2.3"/><circle cx="25.5" cy="28.5" r="2.4"/><circle cx="28.5" cy="31.5" r="2.1"/><circle cx="23.5" cy="32.5" r="2.4"/><circle cx="27" cy="35.5" r="2.2"/><circle cx="22.5" cy="38" r="2"/><circle cx="38" cy="33.4" r="1.6"/><circle cx="48" cy="34" r="1.5"/></g><rect class="ln" x="-4" y="-4" width="72" height="72" rx="9" fill="none" stroke-width="2" stroke-dasharray="5 4"/></g></svg>
+        <h4>Organisms</h4>
+        <p class="kv"><span>Observation</span>light-sheet imaging of embryos and larval brains</p>
+        <p class="kv"><span>State</span>cell positions and lineages, neural activity</p>
+        <p class="kv"><span>Intervention</span>genetic edit, drug, developmental time</p>
+        <p class="ask"><span>Future state to generate</span>Later development or brain activity, checked against the recording</p>
       </li>
     </ul>
     <p class="ill-note">Each sketch reads left to right: an observed image, an intervention, and the future image a living world model should generate (dashed outline).</p>
@@ -211,18 +205,18 @@
     <ol class="topics">
       <li>
         <svg class="topic-ill" viewBox="0 0 160 64" aria-hidden="true" focusable="false"><g transform="translate(4 10) scale(0.6875)"><rect width="64" height="64" rx="6" fill="#1d2233"/><circle cx="18" cy="20" r="9" fill="#4fa3e8"/><circle cx="44" cy="16" r="6" fill="#3ecf8e"/><circle cx="38" cy="42" r="11" fill="#e85bb8"/><circle cx="38" cy="42" r="5" fill="#ffd0ee"/><circle cx="14" cy="48" r="5" fill="#3ecf8e"/><circle cx="54" cy="52" r="4" fill="#f2b632"/><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="2.9"/></g><path class="ln" d="M56 32 H80" fill="none" stroke-width="2.4"/><path d="M78 26 L88 32 L78 38 Z" fill="currentColor"/><g transform="translate(125 33) scale(.48)"><path class="ln" d="M-56,-6 C-54,-40 -18,-50 10,-44 C44,-38 60,-12 52,16 C44,44 8,52 -20,44 C-48,36 -58,20 -56,-6 Z" fill="#cdeee3" stroke-width="5"/><circle class="ln" cx="-6" cy="2" r="17" fill="#8fd3bb" stroke-width="4"/><path d="M-34 -22 L-14 -30 L14 -24 L30 -4 M-14 -30 L-2 -14 M14 -24 L24 22 L-22 26 L-34 -22" stroke="#6b7b86" stroke-width="3.6" stroke-dasharray="7 7" fill="none"/><g fill="#fff" stroke="#6b7b86" stroke-width="3.2"><circle cx="-34" cy="-22" r="6"/><circle cx="-14" cy="-30" r="6"/><circle cx="14" cy="-24" r="6"/><circle cx="30" cy="-4" r="6"/><circle cx="24" cy="22" r="6"/><circle cx="-22" cy="26" r="6"/></g></g></svg>
-        <h3>World states from biomedical observations</h3>
-        <p>Representation learning for microscopy, Cell Painting, histopathology, and medical imaging. Latent states under partial observability. Alignment of images with molecular, spatial-omics, and clinical signals. 3D and 4D reconstruction of biological structures.</p>
+        <h3>World states from biological observations</h3>
+        <p>Representation learning for microscopy, Cell Painting, spatial-omics imaging, and cryo-EM. Latent states under partial observability. Alignment of images with molecular, spatial-omics, and functional measurements. 3D and 4D reconstruction of biological structures.</p>
       </li>
       <li>
         <svg class="topic-ill" viewBox="0 0 160 64" aria-hidden="true" focusable="false"><ellipse class="ill-amber" cx="25" cy="34" rx="22" ry="19" fill="none" stroke-width="1.8" stroke-dasharray="4 3"/><g transform="translate(16 27) rotate(0)"><ellipse class="ln" rx="5.0" ry="5.0" fill="#f6dfa0" stroke-width="1.4"/><circle r="2" fill="#e3b54a"/></g><g transform="translate(32 25) rotate(0)"><ellipse class="ln" rx="5.0" ry="5.0" fill="#f6dfa0" stroke-width="1.4"/><circle r="2" fill="#e3b54a"/></g><g transform="translate(20 42) rotate(0)"><ellipse class="ln" rx="5.0" ry="5.0" fill="#f6dfa0" stroke-width="1.4"/><circle r="2" fill="#e3b54a"/></g><g transform="translate(35 41) rotate(0)"><ellipse class="ln" rx="5.0" ry="5.0" fill="#f6dfa0" stroke-width="1.4"/><circle r="2" fill="#e3b54a"/></g><ellipse class="ill-amber" cx="135" cy="34" rx="22" ry="19" fill="none" stroke-width="1.8" stroke-dasharray="4 3"/><g transform="translate(126 26) rotate(20)"><ellipse class="ln" rx="7" ry="4" fill="#f6dfa0" stroke-width="1.4"/><circle r="2" fill="#e3b54a"/></g><g transform="translate(143 25) rotate(-25)"><ellipse class="ln" rx="6.5" ry="4" fill="#f6dfa0" stroke-width="1.4"/><circle r="2" fill="#e3b54a"/></g><g transform="translate(128 42) rotate(-10)"><ellipse class="ln" rx="6.5" ry="4" fill="#f6dfa0" stroke-width="1.4"/><circle r="2" fill="#e3b54a"/></g><g transform="translate(144 42) rotate(30)"><ellipse class="ln" rx="7" ry="4" fill="#f6dfa0" stroke-width="1.4"/><circle r="2" fill="#e3b54a"/></g><g transform="translate(70 12) rotate(-40) scale(.42)"><rect class="ln" x="-8" y="-16" width="16" height="32" rx="8" fill="#fff" stroke-width="2.4"/><path d="M-8 0 h16 v8 a8 8 0 0 1 -16 0 z" fill="#e05a47"/></g><g class="ln" transform="translate(89 14) scale(.55)" fill="none" stroke-width="3"><circle cx="-8" cy="4" r="5"/><circle cx="8" cy="4" r="5"/><path d="M-5 0 L8 -14 M5 0 L-8 -14"/></g><path class="ln" d="M52 28 H102" fill="none" stroke-width="2.4"/><path d="M100 22 L110 28 L100 34 Z" fill="currentColor"/><path class="ln" d="M54 46 H100" fill="none" stroke-width="1.6" stroke-dasharray="3 3"/><path d="M99 42.5 L106 46 L99 49.5 Z" fill="currentColor"/><path class="ill-red" d="M75 42 l8 8 M83 42 l-8 8" fill="none" stroke-width="2.4"/></svg>
         <h3>Dynamics under interventions</h3>
-        <p>Image-based prediction of responses to chemical and genetic perturbations. Disease-progression and longitudinal-imaging forecasting. Optimal transport, flow matching, and Schrödinger bridges between distributions. Dynamics from unpaired populations and sparse longitudinal data, and when they are identifiable. Generalization to unseen interventions and their combinations.</p>
+        <p>Image-based prediction of responses to chemical and genetic perturbations. Forecasting from live-cell, developmental, and neural imaging. Optimal transport, flow matching, and Schrödinger bridges between distributions. Dynamics from unpaired populations and sparse longitudinal data, and when they are identifiable. Generalization to unseen interventions and their combinations.</p>
       </li>
       <li>
-        <svg class="topic-ill" viewBox="0 0 160 64" aria-hidden="true" focusable="false"><g transform="translate(12 12) scale(0.625)"><rect width="64" height="64" rx="6" fill="#111"/><ellipse cx="32" cy="33" rx="23" ry="26" fill="#9a9a9a"/><ellipse cx="32" cy="33" rx="17" ry="20" fill="#bdbdbd"/><path d="M32 9 V57" stroke="#777" stroke-width="2"/><path d="M20 22 q6 4 0 9 M44 22 q-6 4 0 9 M19 40 q7 3 2 8 M45 40 q-7 3 -2 8" stroke="#888" stroke-width="1.6" fill="none"/><circle cx="40" cy="27" r="5" fill="#f2f2f2"/><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="3.2"/></g><g class="ln" fill="none" stroke-width="2"><path d="M58 32 C78 32 82 16 100 16"/><path d="M58 32 C78 32 82 48 100 48"/></g><path d="M98 12 L106 16 L98 20 Z M98 44 L106 48 L98 52 Z" fill="currentColor"/><g transform="translate(76 11) rotate(-40) scale(.38)"><rect class="ln" x="-8" y="-16" width="16" height="32" rx="8" fill="#fff" stroke-width="2.4"/><path d="M-8 0 h16 v8 a8 8 0 0 1 -16 0 z" fill="#e05a47"/></g><g transform="translate(76 54) rotate(-40) scale(.38)"><rect class="ln" x="-8" y="-16" width="16" height="32" rx="8" fill="#fff" stroke-width="2.4"/><path d="M-8 0 h16 v8 a8 8 0 0 1 -16 0 z" fill="#5a8fd8"/></g><g transform="translate(114 4) scale(0.375)"><rect width="64" height="64" rx="6" fill="#111"/><ellipse cx="32" cy="33" rx="23" ry="26" fill="#9a9a9a"/><ellipse cx="32" cy="33" rx="17" ry="20" fill="#bdbdbd"/><path d="M32 9 V57" stroke="#777" stroke-width="2"/><path d="M20 22 q6 4 0 9 M44 22 q-6 4 0 9 M19 40 q7 3 2 8 M45 40 q-7 3 -2 8" stroke="#888" stroke-width="1.6" fill="none"/><circle cx="40" cy="27" r="2.5" fill="#f2f2f2"/><rect class="ln" x="-6.5" y="-6.5" width="77" height="77" rx="10" fill="none" stroke-width="5.3" stroke-dasharray="10.7 8"/></g><g transform="translate(114 36) scale(0.375)"><rect width="64" height="64" rx="6" fill="#111"/><ellipse cx="32" cy="33" rx="23" ry="26" fill="#9a9a9a"/><ellipse cx="32" cy="33" rx="17" ry="20" fill="#bdbdbd"/><path d="M32 9 V57" stroke="#777" stroke-width="2"/><path d="M20 22 q6 4 0 9 M44 22 q-6 4 0 9 M19 40 q7 3 2 8 M45 40 q-7 3 -2 8" stroke="#888" stroke-width="1.6" fill="none"/><circle cx="40" cy="27" r="8" fill="#f2f2f2"/><rect class="ln" x="-6.5" y="-6.5" width="77" height="77" rx="10" fill="none" stroke-width="5.3" stroke-dasharray="10.7 8"/></g></svg>
+        <svg class="topic-ill" viewBox="0 0 160 64" aria-hidden="true" focusable="false"><g transform="translate(12 12) scale(0.625)"><rect width="64" height="64" rx="6" fill="#1d2233"/><circle cx="18" cy="20" r="9" fill="#4fa3e8"/><circle cx="44" cy="16" r="6" fill="#3ecf8e"/><circle cx="38" cy="42" r="11" fill="#e85bb8"/><circle cx="38" cy="42" r="5" fill="#ffd0ee"/><circle cx="14" cy="48" r="5" fill="#3ecf8e"/><circle cx="54" cy="52" r="4" fill="#f2b632"/><rect class="ln" width="64" height="64" rx="6" fill="none" stroke-width="3.2"/></g><g class="ln" fill="none" stroke-width="2"><path d="M58 32 C78 32 82 16 100 16"/><path d="M58 32 C78 32 82 48 100 48"/></g><path d="M98 12 L106 16 L98 20 Z M98 44 L106 48 L98 52 Z" fill="currentColor"/><g transform="translate(76 11) rotate(-40) scale(.38)"><rect class="ln" x="-8" y="-16" width="16" height="32" rx="8" fill="#fff" stroke-width="2.4"/><path d="M-8 0 h16 v8 a8 8 0 0 1 -16 0 z" fill="#e05a47"/></g><g transform="translate(76 54) rotate(-40) scale(.38)"><rect class="ln" x="-8" y="-16" width="16" height="32" rx="8" fill="#fff" stroke-width="2.4"/><path d="M-8 0 h16 v8 a8 8 0 0 1 -16 0 z" fill="#5a8fd8"/></g><g transform="translate(114 4) scale(0.375)"><rect width="64" height="64" rx="6" fill="#1d2233"/><circle cx="18" cy="20" r="9" fill="#4fa3e8"/><circle cx="44" cy="16" r="6" fill="#3ecf8e"/><circle cx="38" cy="42" r="6" fill="#e85bb8"/><circle cx="38" cy="42" r="3" fill="#ffd0ee"/><circle cx="14" cy="48" r="5" fill="#3ecf8e"/><circle cx="54" cy="52" r="4" fill="#f2b632"/><rect class="ln" x="-6.5" y="-6.5" width="77" height="77" rx="10" fill="none" stroke-width="5.3" stroke-dasharray="10.7 8"/></g><g transform="translate(114 36) scale(0.375)"><rect width="64" height="64" rx="6" fill="#1d2233"/><circle cx="18" cy="20" r="9" fill="#4fa3e8"/><circle cx="44" cy="16" r="6" fill="#3ecf8e"/><circle cx="38" cy="42" r="16" fill="#e85bb8"/><circle cx="38" cy="42" r="7" fill="#ffd0ee"/><circle cx="14" cy="48" r="5" fill="#3ecf8e"/><circle cx="54" cy="52" r="4" fill="#f2b632"/><rect class="ln" x="-6.5" y="-6.5" width="77" height="77" rx="10" fill="none" stroke-width="5.3" stroke-dasharray="10.7 8"/></g></svg>
         <h3>Generation of future states</h3>
-        <p>Image and video generation conditioned on drugs, genes, treatments, and time. Counterfactual image generation. Virtual staining and cross-modal generation. Conformational ensembles beyond static structures. Organ motion and surgical and endoscopic scene simulation.</p>
+        <p>Image and video generation conditioned on drugs, genes, and time. Counterfactual image generation. Virtual staining and cross-modal generation. Conformational ensembles beyond static structures.</p>
       </li>
       <li>
         <svg class="topic-ill" viewBox="0 0 160 64" aria-hidden="true" focusable="false"><g transform="translate(4 6) scale(.5) translate(-22 -314)"><rect class="ln" x="22" y="314" width="88" height="88" rx="6" fill="#1d2233" stroke-width="4"/><circle cx="48" cy="340" r="11" fill="#4fa3e8"/><circle cx="84" cy="348" r="15" fill="#e85bb8"/><circle cx="84" cy="348" r="6" fill="#ffd0ee"/><circle cx="56" cy="380" r="7" fill="#3ecf8e"/><circle class="ln" cx="100" cy="390" r="22" fill="#fff" fill-opacity=".35" stroke-width="6"/><path class="ln" d="M116 406 L134 424" stroke-width="9" fill="none"/></g><path class="ill-green" d="M77 12 l3.5 3.5 l7 -7.5" fill="none" stroke-width="2.6"/><rect class="ill-bar" x="94" y="9.5" width="56" height="5" rx="2.5"/><path class="ill-green" d="M77 25 l3.5 3.5 l7 -7.5" fill="none" stroke-width="2.6"/><rect class="ill-bar" x="94" y="22.5" width="46" height="5" rx="2.5"/><path class="ill-amber" d="M77.5 35 q0 -4.5 3.5 -4.5 q3.5 0 3.5 3.5 q0 3 -3.5 4 v2.5" fill="none" stroke-width="2.4" stroke-linecap="round"/><circle class="ill-amber-f" cx="81" cy="44.6" r="1.5"/><rect class="ill-bar" x="94" y="35.5" width="52" height="5" rx="2.5"/><path class="ill-red" d="M77 48 l8 8 M85 48 l-8 8" fill="none" stroke-width="2.6"/><rect class="ill-bar" x="94" y="48.5" width="40" height="5" rx="2.5"/></svg>
@@ -230,7 +224,7 @@
         <p>Scientific metrics and benchmarks for generative simulators, validation against held-out interventions and independent assays, out-of-distribution generalization, uncertainty estimation, hallucination detection, provenance of synthetic images, and interpretability.</p>
       </li>
     </ol>
-    <p class="scope">General-purpose methods for world models, video generation, and 4D vision are in scope whenever the submission argues for their relevance to a question in the life sciences. Authors will state which level of the evaluation ladder their results reach. When the call opens, this site will list public datasets that support L3 tests (held-out interventions, time points, or patients), curated by the organizers.</p>
+    <p class="scope">General-purpose methods for world models, video generation, and 4D vision are in scope whenever the submission argues for their relevance to a question in the life sciences. Static representation learning is in scope when it serves state inference, dynamics, or intervention prediction; segmentation or classification alone, clinical imaging, and models without a visual component are not. Authors will state which level of the evaluation ladder their results reach. When the call opens, this site will list public datasets that support L3 tests (held-out interventions, time points, or cell types), curated by the organizers.</p>
   </div>
 </section>
 
@@ -259,21 +253,21 @@
         <div class="details-group">
           <details>
             <summary>Review process</summary>
-            <p>Both tracks use double-blind review on OpenReview, and every author needs a complete OpenReview profile. At least one reviewer per paper comes from the relevant biological or clinical domain. The criteria are relevance, technical soundness, quality of evidence, and value for discussion. Organizers and reviewers recuse themselves from conflicted submissions, including those from their own institutions, and an organizer without a conflict oversees each decision.</p>
+            <p>Both tracks use double-blind review on OpenReview, and every author needs a complete OpenReview profile. At least one reviewer per paper comes from the relevant biological domain. The criteria are relevance, technical soundness, quality of evidence, and value for discussion. Organizers and reviewers recuse themselves from conflicted submissions, including those from their own institutions, and an organizer without a conflict oversees each decision.</p>
           </details>
           <details>
             <summary>Responsible submissions</summary>
             <ul class="checks">
-              <li>Papers that use clinical data state the data source, the de-identification, and the ethics approval or data-use agreement. Public datasets are used under their licenses.</li>
-              <li>Synthetic cell images and medical scans are clearly labeled as synthetic.</li>
-              <li>Accepted papers state their intended use and limitations. Predictive models of disease progression are not validated clinical tools.</li>
-              <li>We encourage reporting of subgroup performance and dataset composition.</li>
+              <li>Papers state their data sources and licenses, and the consent and ethics approval for any human-derived cells or tissue.</li>
+              <li>Synthetic cell images and structures are clearly labeled as synthetic.</li>
+              <li>Accepted papers state which predictions were tested experimentally. A predicted response is a hypothesis, not a measurement.</li>
+              <li>We encourage reporting batch effects (laboratory, microscope, plate layout, cell line) and dataset composition.</li>
               <li>The workshop follows the CVPR 2027 policy on large language models for authors and reviewers. Reviewers may not upload submissions to external AI services.</li>
             </ul>
           </details>
           <details>
             <summary>Awards and student support</summary>
-            <p>We will present a Best Paper award and a Best Poster award, sponsored by <a href="https://aitonomy.org/">AItonomy</a>. The organizers manage any prize money, and the sponsor takes no part in selecting the winners. The non-archival track welcomes biology-first and medicine-first submissions that use vision methods, and an online mentoring hour, held by the organizers before the camera-ready deadline, supports first-time CVPR authors.</p>
+            <p>We will present a Best Paper award and a Best Poster award, sponsored by <a href="https://aitonomy.org/">AItonomy</a>. The organizers manage any prize money, and the sponsor takes no part in selecting the winners. The non-archival track welcomes biology-first submissions that use vision methods, and an online mentoring hour, held by the organizers before the camera-ready deadline, supports first-time CVPR authors.</p>
           </details>
         </div>
       </div>
@@ -305,7 +299,7 @@
     <p class="prose intro">About 4.5 hours with three invited talks, one per key question, oral presentations from both paper tracks, a poster session, and a panel and open-problems forum. The workshop is in person, and all talks are streamed and recorded for the CVPR virtual site.</p>
 
     <h3 class="sub">Invited speakers</h3>
-    <p class="prose">To be announced. Each talk takes one key question, and the panel brings together generative modeling, drug discovery, pathology, and clinical validation.</p>
+    <p class="prose">To be announced. Each talk takes one key question, and the panel brings together structure generation, image-based drug discovery, and AI-designed experiments tested in the wet lab.</p>
     <ul class="slots">
       <li><svg class="slot-ic"><use href="#i-cell"/></svg><b>Q1 · Learning cell states from images</b><span>To be announced</span></li>
       <li><svg class="slot-ic"><use href="#i-video"/></svg><b>Q2 · Physical to living world models: what transfers, what breaks</b><span>To be announced</span></li>
@@ -335,7 +329,7 @@
           <p>Which predictions can we test, and against what?</p>
           <footer>The forum question</footer>
         </blockquote>
-        <p>The panel turns Key Question 3 into a working session, moderated by Yingcheng Wu. Each panelist, from structure generation, image-based drug discovery, clinical pathology, and clinical validation, opens with one prediction problem from their field and the independent data that could test it. The discussion then places these problems on the evaluation ladder: which predictions can be tested now and against what data, which outputs remain hypotheses, and which metrics reflect experimental or clinical value. Openings take 10 minutes, discussion 15, and audience questions, including questions submitted online, the last 10. The answers feed the post-workshop summary.</p>
+        <p>The panel turns Key Question 3 into a working session, moderated by Yingcheng Wu. Each panelist, from structure generation, image-based drug discovery, and AI-designed experiments tested in the wet lab, opens with one prediction problem from their field and the independent data that could test it. The discussion then places these problems on the evaluation ladder: which predictions can be tested now and against what data, which outputs remain hypotheses, and which metrics reflect experimental value. Openings take 10 minutes, discussion 15, and audience questions, including questions submitted online, the last 10. The answers feed the post-workshop summary.</p>
         <details>
           <summary>Taking part remotely</summary>
           <p>One organizer relays online questions in every Q&amp;A slot. Authors who cannot travel may present through a prerecorded video, with their poster displayed by an organizer or coauthor. An asynchronous discussion channel stays open for two weeks after the workshop. Accepted papers, posters, and slides (with author consent) will be posted on this website, and the organizers will publish a short summary of open problems and proposed evaluation practices within four weeks of the workshop.</p>
@@ -348,7 +342,7 @@
 <section class="section section-alt" id="organizers" aria-labelledby="organizers-title">
   <div class="wrap">
     <p class="eyebrow">Organizers</p>
-    <h2 id="organizers-title">One team across vision, biology and medicine</h2>
+    <h2 id="organizers-title">One team across vision and biology</h2>
     <ul class="people">
       <li>
         <img src="assets/img/people/bo-li.webp" alt="" width="112" height="112" loading="lazy">
@@ -383,7 +377,7 @@
           <h3><a href="https://charles-wu.com/">Yingcheng Wu</a></h3>
           <p class="affil">Stanford University</p>
           <p class="role">Postdoctoral Scholar in Pathology</p>
-          <p class="focus">Pathology and biomedical world&nbsp;models</p>
+          <p class="focus">Biomedical world models and autonomous discovery</p>
         </div>
       </li>
       <li>
@@ -440,7 +434,7 @@
           <h3><a href="https://www.cse.cuhk.edu.hk/people/faculty/pheng-ann-heng/">Pheng Ann Heng</a></h3>
           <p class="affil">The Chinese University of Hong Kong</p>
           <p class="role">Choh-Ming Li Professor of Computer Science and Engineering</p>
-          <p class="focus">Medical imaging, graphics and visualization</p>
+          <p class="focus">Biomedical image analysis and visualization</p>
         </div>
       </li>
     </ul>
@@ -453,7 +447,7 @@
   <div class="wrap footer-grid">
     <div>
       <p class="footer-brand">Living<b>WM</b></p>
-      <p>Living World Models: Predictive Vision for Biology and Medicine. A workshop proposed to CVPR 2027.</p>
+      <p>Living World Models: Predictive Vision for Biology. A workshop proposed to CVPR 2027.</p>
     </div>
     <div>
       <p class="footer-label">Contact</p>
