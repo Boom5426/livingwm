@@ -100,7 +100,7 @@
       </div>
       <div class="audience">
         <h3>Who should attend</h3>
-        <p>Researchers in vision and machine learning, together with the people who generate the images that predictive vision would model. The invited talks pair methodological contributions with concrete biological questions.</p>
+        <p>Researchers in vision and machine learning, together with the people whose images living world models learn from. The invited talks and the panel pair methodological contributions with concrete biological questions.</p>
         <ul class="chips">
           <li>World models</li><li>Generative models</li><li>4D vision</li><li>Microscopy</li><li>Cell biology</li><li>Developmental biology</li><li>Structural biology</li><li>Neuroscience</li><li>Drug discovery</li>
         </ul>
@@ -118,7 +118,7 @@
       <li class="node"><span class="sym"><i>x<sub>t+Δ</sub></i></span><small>future observation</small></li>
     </ol>
     <div class="def-cols">
-      <p>Let <i>x</i> be an observation of a biological system: an image (a micrograph, a tissue section, a light-sheet volume, a particle image), possibly paired with molecular measurements such as a transcriptome. Let <i>s<sub>t</sub></i> be its latent biological state at time <i>t</i>, and <i>a</i> an intervention, such as a genetic or chemical perturbation or a combination of them, applied over an interval <i>Δ</i>. A living world model has the three components shown above.</p>
+      <p>Let <i>x</i> be an observation of a biological system: an image (a micrograph, a tissue section, a light-sheet volume, a particle image), possibly paired with molecular measurements such as a transcriptome. Let <i>s<sub>t</sub></i> be its latent biological state at time <i>t</i>, and <i>a</i> an intervention, such as a genetic or chemical perturbation or a combination of them, applied over an interval <i>Δ</i>. A living world model has the three components shown above. A contribution may address only some of them: a latent predictive model, for example, needs no decoder.</p>
       <p>The decoder usually generates images, but also molecular or functional readouts. Other modalities serve as views of the state, as descriptions of the intervention (a compound&rsquo;s structure, a gene&rsquo;s sequence) that let a model reach unseen interventions, and as independent evidence the model never saw, such as a held-out assay.</p>
       <p>Because snapshots are usually unpaired, the data often determine only how the state distribution changes, from <i>ρ<sub>t</sub></i> to <i>ρ<sup>a</sup><sub>t+Δ</sub></i>, not which state becomes which. Optimal transport, flow matching, and Schrödinger bridges are natural tools for this setting, but each picks one coupling among the many that match the two distributions. That coupling is an assumption (for example, least displacement) that a model should state and, where possible, test against lineage tracing or live imaging.</p>
     </div>
@@ -158,8 +158,8 @@
         <ol class="ladder-steps">
           <li><b>L1</b><span>Visual fidelity</span><small>only when the output is an image</small></li>
           <li><b>L2</b><span>Consistency with known biology</span></li>
-          <li><b>L3</b><span>Calibrated predictive validity</span><small>on held-out interventions, time points, or cell types</small></li>
-          <li><b>L4</b><span>Utility for experimental decisions</span><small>such as choosing which perturbation to test next</small></li>
+          <li><b>L3</b><span>Calibrated predictive validity</span><small>on held-out interventions, time points, or cell types, with replicates and batches of test conditions kept out of training</small></li>
+          <li><b>L4</b><span>Utility for experimental decisions</span><small>such as choosing which perturbation to test next, shown on past screens or in new experiments</small></li>
         </ol>
         <p class="ladder-axis" aria-hidden="true"><span>stronger evidence</span></p>
       </div>
@@ -236,7 +236,7 @@
         <p>Scientific metrics and benchmarks for living world models, validation against held-out interventions and independent assays, out-of-distribution generalization, uncertainty estimation, hallucination detection, provenance of synthetic images, and interpretability.</p>
       </li>
     </ol>
-    <p class="scope">General-purpose methods for world models, video generation, and 4D vision are in scope whenever the submission argues for their relevance to a question in the life sciences. Static representation learning is in scope when it serves state inference, dynamics, or intervention prediction; segmentation or classification alone, clinical diagnosis or prognosis, and models without a visual component are not. Authors will state which level of the evaluation ladder their results reach. When the call opens, this site will list public datasets that support L3 tests (held-out interventions, time points, or cell types), curated by the organizers.</p>
+    <p class="scope">General-purpose methods for world models, video generation, and 4D vision are in scope whenever the submission argues for their relevance to a question in the life sciences. Static representation learning and conditional image generation are in scope when they serve state inference, dynamics, or intervention prediction; segmentation or classification alone, clinical diagnosis or prognosis, and models without a visual component are not. Authors will state which components their work covers and which level of the evaluation ladder their results reach. When the call opens, this site will list public datasets that support L3 tests (held-out interventions, time points, or cell types), curated by the organizers.</p>
   </div>
 </section>
 
@@ -258,7 +258,7 @@
             <p class="track-tag">Non-archival</p>
             <h3>Extended abstracts and recent papers</h3>
             <p class="spec">Up to 4 pages, excluding references · CVPR 2027 style</p>
-            <p>Extended abstracts, which CVPR does not regard as prior publication, and recently accepted papers from other venues. Eligible for orals and listed on this website only. Two reviews per paper.</p>
+            <p>Extended abstracts, which do not count as publications under CVPR&rsquo;s dual-submission policy, and recently accepted papers from other venues. Eligible for orals and listed on this website only. Two reviews per paper.</p>
           </article>
         </div>
 
@@ -273,6 +273,7 @@
               <li>Papers state their data sources and licenses, and the consent and ethics approval for any human-derived cells or tissue.</li>
               <li>Synthetic cell images and structures are clearly labeled as synthetic.</li>
               <li>Accepted papers state which predictions were tested experimentally. A predicted response is a hypothesis, not a measurement.</li>
+              <li>Papers that design proteins or compounds discuss the risks of misuse.</li>
               <li>We encourage reporting batch effects (laboratory, microscope, plate layout, cell line) and dataset composition.</li>
               <li>The workshop follows the CVPR 2027 policy on large language models for authors and reviewers. Reviewers may not upload submissions to external AI services.</li>
             </ul>
@@ -341,10 +342,10 @@
           <p>Which predictions can we test, and against what?</p>
           <footer>The forum question</footer>
         </blockquote>
-        <p>The panel turns Q3 into a working session, moderated by Yingcheng Wu. Each panelist, from structure generation, image-based drug discovery, and AI-designed experiments tested in the wet lab, opens with one prediction problem from their field and the independent data that could test it. The discussion then places these problems on the evaluation ladder: which predictions can be tested now and against what data, which outputs remain hypotheses, and which metrics reflect experimental value. Openings take 10 minutes, discussion 15, and audience questions, including questions submitted online, the last 10. The answers feed the post-workshop summary.</p>
+        <p>The panel turns Q3 into a working session, moderated by Yingcheng Wu. Each panelist, from structure generation, image-based drug discovery, and AI-designed experiments tested in the wet lab, opens with one prediction problem from their field and the independent data that could test it. The discussion then places these problems on the evaluation ladder: which predictions can be tested now and against what data, which outputs remain hypotheses, and which metrics reflect experimental value. Openings take 10 minutes, discussion 15, and audience questions, including questions submitted online, the last 10. The answers feed a one-page evaluation checklist, published after the workshop.</p>
         <details>
           <summary>Taking part remotely</summary>
-          <p>One organizer relays online questions in every Q&amp;A slot. Authors who cannot travel may present through a prerecorded video, with their poster displayed by an organizer or coauthor. An asynchronous discussion channel stays open for two weeks after the workshop. Accepted papers, posters, and slides (with author consent) will be posted on this website, and the organizers will publish a short summary of open problems and proposed evaluation practices within four weeks of the workshop.</p>
+          <p>One organizer relays online questions in every Q&amp;A slot. Authors who cannot travel may present through a prerecorded video, with their poster displayed by an organizer or coauthor. An asynchronous discussion channel stays open for two weeks after the workshop. Accepted papers, posters, and slides (with author consent) will be posted on this website. Within four weeks, the organizers will publish a one-page evaluation checklist from the forum: what was observed, what was predicted, which conditions were held out, and what independent evidence tested each prediction.</p>
         </details>
       </div>
     </div>
