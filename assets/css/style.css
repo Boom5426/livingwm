@@ -77,30 +77,6 @@
   --header-h: 60px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f131c;
-    --bg-alt: #131824;
-    --surface: #1a2030;
-    --ink: #edf0f6;
-    --ink-2: #c7ccd8;
-    --muted: #a3aabb;
-    --line: #283044;
-    --green: #62cfa8;
-    --green-dot: #3fb68b;
-    --green-soft: #15302a;
-    --coral: #f39a86;
-    --coral-soft: #3a221d;
-    --ill-ink: #c3cad8;
-    --ill-panel: #131927;
-    --ill-red: #f0806e;
-    --ill-green: #4cc79c;
-    --ill-amber: #e8b14a;
-    --ill-bar: #2f3850;
-    --shadow: none;
-  }
-}
-
 *,
 *::before,
 *::after { box-sizing: border-box; }
