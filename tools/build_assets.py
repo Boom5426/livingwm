@@ -27,10 +27,11 @@ IMG = SITE / "assets" / "img"
 
 # Source URL and square crop box (left, top, right, bottom) in source pixels.
 # Boxes are centred on the face so the head fills about three quarters of the
-# frame where the source resolution allows. The first three photos come from
-# the organizers' homepages, Mengyue Yang's from her University of Bristol
-# research profile, Yang Zhang's from his group's homepage, and the rest from
-# the Scientific World Models workshop site, which the same organizers maintain.
+# frame where the source resolution allows. The first three photos and Xinyue
+# Xu's come from the organizers' homepages, Mengyue Yang's from her University of
+# Bristol research profile, Yang Zhang's from his group's homepage, and the rest
+# from the Scientific World Models workshop site, which the same organizers
+# maintain.
 SWM_PEOPLE = "https://taoyongcui.github.io/scientific-world-models/assets/img/people"
 PHOTOS: dict[str, tuple[str, tuple[int, int, int, int] | None]] = {
     "bo-li": ("https://boom5426.github.io/images/CV_me.jpg", (0, 25, 500, 525)),
@@ -38,7 +39,7 @@ PHOTOS: dict[str, tuple[str, tuple[int, int, int, int] | None]] = {
     "ling-yang": ("https://yangling0818.github.io/images/ling-yang.jpg", (100, 5, 585, 490)),
     "yingcheng-wu": (f"{SWM_PEOPLE}/yingcheng-wu.webp", (124, 52, 384, 312)),
     "zhenfei-yin": (f"{SWM_PEOPLE}/zhenfei-yin.webp", (54, 0, 614, 560)),
-    "lu-mi": (f"{SWM_PEOPLE}/lu-mi.webp", (101, 40, 541, 480)),
+    "xinyue-xu": ("https://thea-hsu.github.io/images/my.png", (70, 10, 240, 180)),
     "dandan-zhang": (f"{SWM_PEOPLE}/dandan-zhang.webp", (0, 0, 236, 236)),
     "mengyue-yang": ("https://research-information.bris.ac.uk/files-asset/498307234/profile_photo.jpeg", (155, 60, 595, 500)),
     "philip-torr": (f"{SWM_PEOPLE}/philip-torr.webp", None),
