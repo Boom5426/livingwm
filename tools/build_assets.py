@@ -29,8 +29,8 @@ IMG = SITE / "assets" / "img"
 # Boxes are centred on the face so the head fills about three quarters of the
 # frame where the source resolution allows. The first three photos come from
 # the organizers' homepages, Mengyue Yang's from her University of Bristol
-# research profile, and the rest from the Scientific World Models workshop
-# site, which the same organizers maintain.
+# research profile, Yang Zhang's from his group's homepage, and the rest from
+# the Scientific World Models workshop site, which the same organizers maintain.
 SWM_PEOPLE = "https://taoyongcui.github.io/scientific-world-models/assets/img/people"
 PHOTOS: dict[str, tuple[str, tuple[int, int, int, int] | None]] = {
     "bo-li": ("https://boom5426.github.io/images/CV_me.jpg", (0, 25, 500, 525)),
@@ -43,6 +43,7 @@ PHOTOS: dict[str, tuple[str, tuple[int, int, int, int] | None]] = {
     "mengyue-yang": ("https://research-information.bris.ac.uk/files-asset/498307234/profile_photo.jpeg", (155, 60, 595, 500)),
     "philip-torr": (f"{SWM_PEOPLE}/philip-torr.webp", None),
     "pheng-ann-heng": (f"{SWM_PEOPLE}/pheng-ann-heng.webp", (6, 4, 256, 254)),
+    "yang-zhang": ("https://zhanggroup.org/people/image/yang_zhang.jpg", (85, 10, 785, 710)),
 }
 PHOTO_SIZE = 400  # px, upper bound; smaller sources are kept at native size
 # Some hosts (the Bristol research portal) refuse urllib's default agent.
