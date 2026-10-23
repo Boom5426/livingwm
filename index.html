@@ -98,10 +98,16 @@
         <p class="lead">Living systems, from molecules to organisms, change under genes, drugs, and time, yet images and molecular profiles offer only partial, often unpaired views of these changes. This workshop asks how to learn world states from visual observations, predict how these states evolve over time and under interventions, and generate trustworthy future states.</p>
         <p>Beyond realism, such predictions must hold up against independent measurements and unseen interventions, and help decide which experiments to run. Through invited talks, papers, and an open-problems forum, we bring together vision and life-science researchers to establish shared problems and evaluation principles for living world models.</p>
       </div>
+      <div class="audience">
+        <h3>Who should attend</h3>
+        <p>Researchers in vision and machine learning, together with the people who generate the images that predictive vision would model. The invited talks pair methodological contributions with concrete biological questions.</p>
+        <ul class="chips">
+          <li>World models</li><li>Generative models</li><li>4D vision</li><li>Microscopy</li><li>Cell biology</li><li>Developmental biology</li><li>Structural biology</li><li>Neuroscience</li><li>Drug discovery</li>
+        </ul>
+      </div>
     </div>
 
     <h3 class="sub">What is a living world model?</h3>
-    <p class="prose">Let <i>x</i> be an observation of a biological system: an image (a micrograph, a tissue section, a light-sheet volume, a particle image), possibly paired with molecular measurements such as a transcriptome. Let <i>s<sub>t</sub></i> be its latent biological state at time <i>t</i>, and <i>a</i> an intervention, such as a genetic or chemical perturbation or a combination of them, applied over an interval <i>Δ</i>. A living world model has three components.</p>
     <ol class="flow" aria-label="The three components of a living world model: encoder, transition and decoder">
       <li class="node"><span class="sym"><i>x</i></span><small>observation</small></li>
       <li class="edge"><span class="lbl"><b>Encoder</b><span class="math">q<sub>φ</sub>(s | x)</span></span><span class="arrow" aria-hidden="true"></span><small>learns the world state</small></li>
@@ -111,14 +117,10 @@
       <li class="edge"><span class="lbl"><b>Decoder</b><span class="math">g<sub>ψ</sub>(x | s)</span></span><span class="arrow" aria-hidden="true"></span><small>generates the future</small></li>
       <li class="node"><span class="sym"><i>x<sub>t+Δ</sub></i></span><small>future observation</small></li>
     </ol>
-    <p class="prose">The decoder usually generates images, but also molecular or functional readouts. Other modalities serve as views of the state, as descriptions of the intervention (a compound&rsquo;s structure, a gene&rsquo;s sequence) that let a model reach unseen interventions, and as independent evidence the model never saw, such as a held-out assay. Because snapshots are usually unpaired, the data often determine only how the state distribution changes, from <i>ρ<sub>t</sub></i> to <i>ρ<sup>a</sup><sub>t+Δ</sub></i>, not which state becomes which. Optimal transport, flow matching, and Schrödinger bridges are natural tools for this setting, but each picks one coupling among the many that match the two distributions. That coupling is an assumption (for example, least displacement) that a model should state and, where possible, test against lineage tracing or live imaging.</p>
-
-    <div class="audience">
-      <h3>Who should attend</h3>
-      <p>Researchers in vision and machine learning, together with the people who generate the images that predictive vision would model. The invited talks pair methodological contributions with concrete biological questions.</p>
-      <ul class="chips">
-        <li>World models</li><li>Generative models</li><li>4D vision</li><li>Microscopy</li><li>Cell biology</li><li>Developmental biology</li><li>Structural biology</li><li>Neuroscience</li><li>Drug discovery</li>
-      </ul>
+    <div class="def-cols">
+      <p>Let <i>x</i> be an observation of a biological system: an image (a micrograph, a tissue section, a light-sheet volume, a particle image), possibly paired with molecular measurements such as a transcriptome. Let <i>s<sub>t</sub></i> be its latent biological state at time <i>t</i>, and <i>a</i> an intervention, such as a genetic or chemical perturbation or a combination of them, applied over an interval <i>Δ</i>. A living world model has the three components shown above.</p>
+      <p>The decoder usually generates images, but also molecular or functional readouts. Other modalities serve as views of the state, as descriptions of the intervention (a compound&rsquo;s structure, a gene&rsquo;s sequence) that let a model reach unseen interventions, and as independent evidence the model never saw, such as a held-out assay.</p>
+      <p>Because snapshots are usually unpaired, the data often determine only how the state distribution changes, from <i>ρ<sub>t</sub></i> to <i>ρ<sup>a</sup><sub>t+Δ</sub></i>, not which state becomes which. Optimal transport, flow matching, and Schrödinger bridges are natural tools for this setting, but each picks one coupling among the many that match the two distributions. That coupling is an assumption (for example, least displacement) that a model should state and, where possible, test against lineage tracing or live imaging.</p>
     </div>
   </div>
 </section>
@@ -148,9 +150,19 @@
         <li>
           <span class="q">Q3 · Generation</span>
           <h3>Generating trustworthy future states</h3>
-          <p>How should predicted states be rendered as images, videos, structures, or molecular and functional readouts, including counterfactuals? When can such predictions be trusted to guide experiments? We propose a four-level evaluation ladder for discussion, not as an established standard: (L1) visual fidelity, (L2) consistency with known biology, (L3) calibrated predictive validity on held-out interventions, time points, or cell types, and (L4) utility for experimental decisions, such as choosing which perturbation to test next. The levels are ordered by strength of evidence, not as prerequisites, and L1 applies only when the output is an image.</p>
+          <p>How should predicted states be rendered as images, videos, structures, or molecular and functional readouts, including counterfactuals? When can such predictions be trusted to guide experiments? The ladder below proposes four levels of evidence.</p>
         </li>
       </ol>
+      <div class="ladder">
+        <p class="ladder-head"><span class="q">Q3 · Evaluation ladder</span> Proposed for discussion, not as an established standard. The levels are ordered by strength of evidence, not as prerequisites.</p>
+        <ol class="ladder-steps">
+          <li><b>L1</b><span>Visual fidelity</span><small>only when the output is an image</small></li>
+          <li><b>L2</b><span>Consistency with known biology</span></li>
+          <li><b>L3</b><span>Calibrated predictive validity</span><small>on held-out interventions, time points, or cell types</small></li>
+          <li><b>L4</b><span>Utility for experimental decisions</span><small>such as choosing which perturbation to test next</small></li>
+        </ol>
+        <p class="ladder-axis" aria-hidden="true"><span>stronger evidence</span></p>
+      </div>
     </figure>
 
     <h3 class="sub">One template, four scales</h3>
@@ -417,8 +429,8 @@
         </div>
       </li>
     </ul>
-    <h3 class="sub">Senior organizers</h3>
-    <ul class="people">
+    <h3 class="sub divider"><span>Senior organizers</span></h3>
+    <ul class="people people-senior">
       <li>
         <img src="assets/img/people/philip-torr.webp" alt="" width="112" height="112" loading="lazy">
         <div>
