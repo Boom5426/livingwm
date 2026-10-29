@@ -1,6 +1,6 @@
 # LivingWM website
 
-Website of **Living World Models: Predictive Vision for Biology**, a half-day workshop proposed to CVPR 2027.
+Website of **Living World Models: From Vision to Experiments**, a half-day workshop proposed to CVPR 2027.
 Live at <https://boom5426.github.io/livingwm/> (GitHub Pages, branch `main`, root folder).
 
 A static site: one HTML page, one stylesheet and one small script, with no build step. `.nojekyll` stops GitHub Pages from running Jekyll.
@@ -26,7 +26,7 @@ Edit `index.html` and preview locally:
 python3 -m http.server 8000   # then open http://localhost:8000/
 ```
 
-Until the CVPR decision (22 December 2026), the proposal (`main.tex` in the private proposal repo) is the source of truth.
+Until the CVPR decision (22 December 2026), the proposal (`LivingWM.tex` in the private proposal repo) is the source of truth.
 Text on this site is copied from it, so change both together. After the decision, this site is the source of truth for dates, speakers and the program.
 
 Rules that apply at every stage:
